@@ -33,7 +33,7 @@
 </div></div></main><footer class="footer"><div class="g4 wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
 <div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
-<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Ajuda.dc.html">Ajuda e trocas</a></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Compra segura</strong><span class="small">Dados protegidos e senha armazenada com criptografia.</span></div>
 </div></footer>
 <sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
@@ -48,6 +48,7 @@ toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind
 dlgKeys(close){ return e => { if (e.key === 'Escape') { e.stopPropagation(); close(); return; } if (e.key !== 'Tab') return; const d = e.currentTarget.querySelector('[role=dialog]'); if (!d) return; const f = Array.from(d.querySelectorAll('button:not([disabled]),a[href],input,select,textarea')); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }; }
 componentDidUpdate(){ const d = document.querySelector('[role=dialog]'); if (d && !this._dlg) { this._dlg = true; this._ret = document.activeElement; setTimeout(() => { const t = d.querySelector('input,select,textarea') || d.querySelector('button'); t && t.focus(); }, 0); } else if (!d && this._dlg) { this._dlg = false; if (this._ret && this._ret.focus) this._ret.focus(); } }
 componentWillUnmount(){ clearTimeout(this._t); }
+
 
 
 mkFields(defs){ const s = this.state; const out = {};

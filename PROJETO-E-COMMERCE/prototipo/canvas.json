@@ -144,6 +144,16 @@
    "expand": "fill",
    "is_interactive": true
   },
+  "Ajuda.dc.html": {
+   "x": 0,
+   "y": 5540,
+   "w": 1440,
+   "h": 1150,
+   "title": "12b · Ajuda e atendimento",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
   "AdminLogin.dc.html": {
    "x": 0,
    "y": 0,
@@ -444,6 +454,7 @@
   "MeusPedidos.dc.html",
   "PedidoDetalhe.dc.html",
   "Categorias.dc.html",
+  "Ajuda.dc.html",
   "AdminLogin.dc.html",
   "AdminDashboard.dc.html",
   "AdminProdutos.dc.html",

@@ -154,3 +154,14 @@ Os três problemas de gravidade 3: o carrinho não é compartilhado entre as tel
 **O que medir:** taxa de sucesso por tarefa, tempo por tarefa, número de erros, e o questionário **SUS** (System Usability Scale, 10 perguntas) no fim. Nota SUS acima de 68 está acima da média; acima de 80 é considerada boa.
 
 **Depois do teste:** comparar os problemas observados com os 18 desta avaliação, ajustar as gravidades e registrar os novos achados.
+
+## Correções aplicadas após a avaliação
+
+| Problema | Gravidade | O que mudou no protótipo |
+|---|---|---|
+| 8 — Busca do painel sem efeito | 3 → resolvido | A busca do topo do painel procura em pedidos, produtos e clientes a partir da 2ª letra, mostra até 8 resultados com o tipo de cada um e anuncia a quantidade para leitores de tela |
+| 8 — Links de ajuda sem destino | 3 → resolvido | Nova tela **Ajuda e atendimento** com perguntas frequentes (entrega, pedidos, trocas, pagamento, conta), ligada ao checkout, ao rodapé e ao detalhe do pedido |
+| 18 — Sessão expirada | 3 → resolvido | No checkout, o botão "Simular sessão expirada" abre o aviso "Sua sessão expirou" com o e-mail já preenchido; ao digitar a senha, a pessoa continua na mesma etapa, sem perder o carrinho |
+| 1 — Carrinho entre telas | 3 (mantido) | Limitação do formato do protótipo; resolvida na implementação. No teste com usuários, avisar o participante antes |
+
+Gravidade 3 restante: **1** (carrinho entre telas).

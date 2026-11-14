@@ -14,8 +14,8 @@
 </helmet>
 <div class="pg us-root" style="min-height:1150px">
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header style="background:#fff;border-bottom:1px solid var(--border)"><div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px;box-sizing:border-box"><a class="us-header__logo" href="Main.dc.html" style="color:#112058">Utili<span>Store</span></a><span class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra segura</span><a class="us-link small" href="Main.dc.html">Precisa de ajuda?</a></div></header><main id="conteudo" class="wrap">
-<h1 class="h1">Finalizar compra</h1>
+<header style="background:#fff;border-bottom:1px solid var(--border)"><div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px;box-sizing:border-box"><a class="us-header__logo" href="Main.dc.html" style="color:#112058">Utili<span>Store</span></a><span class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra segura</span><a class="us-link small" href="Ajuda.dc.html">Precisa de ajuda?</a></div></header><main id="conteudo" class="wrap">
+<div class="us-row"><h1 class="h1">Finalizar compra</h1><button class="us-btn us-btn--ghost us-btn--sm" type="button" onClick="{{expire}}" style="margin-left:auto">Simular sessão expirada (demonstração)</button></div>
 <ol class="g4" aria-label="Etapas da compra" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px"><sc-for list="{{steps}}" as="st" hint-placeholder-count="4"><li class="step {{st.cls}}" aria-current="{{st.cur}}"><span class="n">{{st.n}}</span>{{st.name}}</li></sc-for></ol>
 <div class="g2" style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start"><div style="display:flex;flex-direction:column;gap:20px">
 <sc-if value="{{s0}}" hint-placeholder-val="{{true}}"><section class="us-card" style="display:flex;flex-direction:column;gap:14px"><div class="us-row"><h2 class="h2">1. Identificação</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>GET /api/auth/me</span></div>
@@ -46,7 +46,13 @@
 <aside class="us-card" aria-label="Resumo do pedido" style="display:flex;flex-direction:column;gap:12px"><div class="us-row"><h2 class="h3">Resumo do pedido</h2><span class="us-badge us-badge--demo">Demonstração</span></div>
 <div class="small" style="display:flex"><span>2× Pote Hermético de Vidro 1,5 L</span><span style="margin-left:auto">R$ 79,80</span></div><div class="small" style="display:flex"><span>1× Garrafa Térmica Inox 1 L</span><span style="margin-left:auto">R$ 64,50</span></div><div class="small" style="display:flex"><span>1× Carregador Turbo USB-C 65W</span><span style="margin-left:auto">R$ 89,90</span></div>
 <div class="small" style="display:flex"><span>Frete</span><span style="margin-left:auto">{{freteTxt}}</span></div>
-<div style="border-top:1px solid var(--border);padding-top:12px;display:flex;align-items:baseline"><strong>Total</strong><strong style="margin-left:auto;font-size:26px">{{totalTxt}}</strong></div></aside></div></main>
+<div style="border-top:1px solid var(--border);padding-top:12px;display:flex;align-items:baseline"><strong>Total</strong><strong style="margin-left:auto;font-size:26px">{{totalTxt}}</strong></div></aside></div></main><sc-if value="{{expired}}" hint-placeholder-val="{{false}}"><div class="modal-host us-overlay" onKeyDown="{{escDlg}}"><div class="us-modal" role="dialog" aria-modal="true" aria-labelledby="sx-t" aria-describedby="sx-d">
+<div class="us-modal__head"><h2 class="us-modal__title" id="sx-t">Sua sessão expirou</h2></div>
+<p id="sx-d" class="muted" style="margin:0">Por segurança, sua sessão termina depois de 2 horas. Entre de novo para continuar: seu carrinho e a etapa em que você estava foram mantidos.</p>
+<sc-if value="{{sxErr}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--error" role="alert"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg><div><span class="us-alert__title">Login ou senha inválidos</span>Para testar, a senha é 123456.</div></div></sc-if>
+<div class="us-field"><label class="us-label" for="sx-l">E-mail ou telefone</label><input class="us-input" id="sx-l" value="cliente@utilistore.com" readonly="{{true}}" autocomplete="username"></div>
+<div class="us-field"><label class="us-label" for="sx-p">Senha</label><input class="us-input {{f.sxpw.cls}}" id="sx-p" type="password" autocomplete="current-password" value="{{f.sxpw.v}}" onChange="{{f.sxpw.on}}" aria-invalid="{{f.sxpw.inv}}" aria-describedby="sx-p-h" ><p class="us-help {{f.sxpw.hcls}}" id="sx-p-h">{{f.sxpw.help}}</p></div>
+<div class="us-modal__actions"><a class="us-btn us-btn--secondary" href="Login.dc.html">Entrar com outra conta</a><button class="us-btn us-btn--primary" type="button" onClick="{{reauth}}">Entrar e continuar</button></div></div></div></sc-if>
 <sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
 </div>
 </x-dc>
@@ -59,6 +65,7 @@ toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind
 dlgKeys(close){ return e => { if (e.key === 'Escape') { e.stopPropagation(); close(); return; } if (e.key !== 'Tab') return; const d = e.currentTarget.querySelector('[role=dialog]'); if (!d) return; const f = Array.from(d.querySelectorAll('button:not([disabled]),a[href],input,select,textarea')); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }; }
 componentDidUpdate(){ const d = document.querySelector('[role=dialog]'); if (d && !this._dlg) { this._dlg = true; this._ret = document.activeElement; setTimeout(() => { const t = d.querySelector('input,select,textarea') || d.querySelector('button'); t && t.focus(); }, 0); } else if (!d && this._dlg) { this._dlg = false; if (this._ret && this._ret.focus) this._ret.focus(); } }
 componentWillUnmount(){ clearTimeout(this._t); }
+
 
 
 mkFields(defs){ const s = this.state; const out = {};
@@ -85,6 +92,9 @@ renderVals(){ const s = this.state; const step = s.step || 0; const names = ['Id
     if (Object.keys(er).length) { this.setState({errs: er, newErr: true}); return; }
     const a = {apelido: this.val('apelido'), linha: this.val('logradouro') + ', ' + this.val('numero') + ' – ' + this.val('bairro') + ', ' + this.val('cidade') + '/' + this.val('uf').toUpperCase() + ' · ' + this.val('cep')};
     const list = addrs.concat([a]); this.setState({addrs: list, ai: list.length - 1, newOpen: false, newErr: false, vals: {}, errs: {}}); this.toastNow('Endereço salvo e selecionado'); },
+  expired: !!s.expired, sxErr: !!s.sxErr, expire: () => this.setState({expired: true, sxErr: false, vals: {...(s.vals||{}), sxpw: ''}}),
+  escDlg: this.dlgKeys(() => {}),
+  reauth: () => { const p = (s.vals||{}).sxpw || ''; if (!p) { this.setState({errs: {...(s.errs||{}), sxpw: 'Informe sua senha.'}}); return; } if (p !== '123456') { this.setState({sxErr: true}); return; } this.setState({expired: false, sxErr: false}); this.toastNow('Sessão renovada. Você continua de onde parou.'); },
   freteTxt: step >= 1 ? 'R$ 15,00' : 'Escolha o endereço', totalTxt: step >= 1 ? 'R$ 249,20' : 'R$ 234,20' }; }
 }
 </script>
