@@ -20,7 +20,7 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 | 09 | Interfaces responsivas | [prototipo/RESPONSIVO.md](prototipo/RESPONSIVO.md) (12 telas em 768 e 375px) | ✅ Concluída |
 | 10 | Análise de acessibilidade | [docs/10-analise-de-acessibilidade.md](docs/10-analise-de-acessibilidade.md) (WCAG 2.2 AA, 7 correções aplicadas) | ✅ Concluída |
 | 11 | Avaliação de usabilidade | [docs/11-avaliacao-de-usabilidade.md](docs/11-avaliacao-de-usabilidade.md) (Nielsen, 18 problemas + roteiro de teste) | ✅ Concluída |
-| 12 | Documentação das decisões de design | — | Pendente |
+| 12 | Documentação das decisões de design | [docs/12-decisoes-de-design.md](docs/12-decisoes-de-design.md) (10 perguntas × 20 telas) | ✅ Concluída |
 
 ## Decisões do projeto
 
@@ -38,3 +38,4 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 - Protótipo (Entregas 08 e 09): https://claude.ai/artifact/EChKbmJfKomznKJenp3kii
 - Acessibilidade (Entrega 10): https://claude.ai/artifact/PanzqYR2UT8ag1fWG3Sj28
 - Usabilidade (Entrega 11): https://claude.ai/artifact/VrgNbX6MEuLW7rDfPT5WSC
+- Decisões de design (Entrega 12): https://claude.ai/artifact/8cinYXcgbr5jT7ET5H6QZC
