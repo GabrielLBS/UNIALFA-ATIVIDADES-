@@ -10,14 +10,15 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
-<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#fff;color:#112058;padding:12px 16px;border-radius:10px;font-weight:700;box-shadow:0 4px 18px rgba(17,32,88,.25)}.skip:focus{left:12px;outline:3px solid #35509c;outline-offset:2px}.footer a:focus-visible,.us-header a:focus-visible{outline:3px solid #fff;outline-offset:2px}@media (max-width:520px){html{scroll-padding-bottom:120px}}</style>
 </helmet>
 <div class="pg us-root" style="min-height:1800px">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="us-header"><div class="us-header__bar" style="flex-wrap:wrap;max-width:1200px;margin:0 auto;box-sizing:border-box">
 <a class="us-header__logo" href="Main.dc.html" aria-label="UtiliStore, página inicial">Utili<span>Store</span></a>
 <form class="us-search" role="search" style="flex:1 1 360px" onSubmit="{{noSubmit}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias" value="{{q}}" onChange="{{onQ}}"><button type="submit">Buscar</button></form>
 <div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
-<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" aria-current="page">Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap">
+<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" aria-current="page">Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main id="conteudo" class="wrap">
 <nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><span aria-current="page">{{crumb}}</span></li></ol></nav>
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h1 class="h1">{{title}}</h1><span class="us-badge us-badge--demo">Demonstração</span><span class="muted small" role="status">{{countTxt}}</span></div>
 <div class="g2 gside" style="display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start">
@@ -52,7 +53,9 @@ class Component extends DCLogic {
 constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
 
 brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
-toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 5000); }
+dlgKeys(close){ return e => { if (e.key === 'Escape') { e.stopPropagation(); close(); return; } if (e.key !== 'Tab') return; const d = e.currentTarget.querySelector('[role=dialog]'); if (!d) return; const f = Array.from(d.querySelectorAll('button:not([disabled]),a[href],input,select,textarea')); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }; }
+componentDidUpdate(){ const d = document.querySelector('[role=dialog]'); if (d && !this._dlg) { this._dlg = true; this._ret = document.activeElement; setTimeout(() => { const t = d.querySelector('input,select,textarea') || d.querySelector('button'); t && t.focus(); }, 0); } else if (!d && this._dlg) { this._dlg = false; if (this._ret && this._ret.focus) this._ret.focus(); } }
 componentWillUnmount(){ clearTimeout(this._t); }
 
 

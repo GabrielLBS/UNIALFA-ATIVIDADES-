@@ -10,10 +10,11 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
-<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#fff;color:#112058;padding:12px 16px;border-radius:10px;font-weight:700;box-shadow:0 4px 18px rgba(17,32,88,.25)}.skip:focus{left:12px;outline:3px solid #35509c;outline-offset:2px}.footer a:focus-visible,.us-header a:focus-visible{outline:3px solid #fff;outline-offset:2px}@media (max-width:520px){html{scroll-padding-bottom:120px}}</style>
 </helmet>
 <div class="pg us-root" style="min-height:820px">
-<header style="background:#fff;border-bottom:1px solid var(--border)"><div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px;box-sizing:border-box"><a class="us-header__logo" href="Main.dc.html" style="color:#112058">Utili<span>Store</span></a><span class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra segura</span></div></header><main class="wrap" style="max-width:760px"><section class="us-card" style="padding:40px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header style="background:#fff;border-bottom:1px solid var(--border)"><div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px;box-sizing:border-box"><a class="us-header__logo" href="Main.dc.html" style="color:#112058">Utili<span>Store</span></a><span class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra segura</span><a class="us-link small" href="Main.dc.html">Precisa de ajuda?</a></div></header><main id="conteudo" class="wrap" style="max-width:760px"><section class="us-card" style="padding:40px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
 <span style="width:72px;height:72px;border-radius:50%;background:var(--success-bg);color:var(--success);display:flex;align-items:center;justify-content:center"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span class="us-badge us-badge--demo">Demonstração</span>
 <h1 class="h1">Pedido confirmado!</h1><p style="margin:0;font-size:17px">Número do pedido <strong>#UT-10490</strong> · <span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>Pago</span></p>
 <p class="muted" style="margin:0">Enviamos a confirmação para cliente@utilistore.com. Você pode acompanhar cada etapa em Meus pedidos.</p>
@@ -27,7 +28,9 @@ class Component extends DCLogic {
 constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
 
 brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
-toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 5000); }
+dlgKeys(close){ return e => { if (e.key === 'Escape') { e.stopPropagation(); close(); return; } if (e.key !== 'Tab') return; const d = e.currentTarget.querySelector('[role=dialog]'); if (!d) return; const f = Array.from(d.querySelectorAll('button:not([disabled]),a[href],input,select,textarea')); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }; }
+componentDidUpdate(){ const d = document.querySelector('[role=dialog]'); if (d && !this._dlg) { this._dlg = true; this._ret = document.activeElement; setTimeout(() => { const t = d.querySelector('input,select,textarea') || d.querySelector('button'); t && t.focus(); }, 0); } else if (!d && this._dlg) { this._dlg = false; if (this._ret && this._ret.focus) this._ret.focus(); } }
 componentWillUnmount(){ clearTimeout(this._t); }
 
 renderVals(){ return { hasToast: false, toast: "" }; }

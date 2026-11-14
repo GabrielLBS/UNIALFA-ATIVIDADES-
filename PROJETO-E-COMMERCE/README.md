@@ -18,7 +18,7 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 | 07 | Wireframes | [wireframes/](wireframes/) (32 telas) | ✅ Aprovada |
 | 08 | Protótipos de alta fidelidade | [prototipo/](prototipo/) (19 telas interativas) | ✅ Concluída |
 | 09 | Interfaces responsivas | [prototipo/RESPONSIVO.md](prototipo/RESPONSIVO.md) (12 telas em 768 e 375px) | ✅ Concluída |
-| 10 | Análise de acessibilidade | — | Pendente |
+| 10 | Análise de acessibilidade | [docs/10-analise-de-acessibilidade.md](docs/10-analise-de-acessibilidade.md) (WCAG 2.2 AA, 7 correções aplicadas) | ✅ Concluída |
 | 11 | Avaliação de usabilidade | — | Pendente |
 | 12 | Documentação das decisões de design | — | Pendente |
 
@@ -35,4 +35,5 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 - Diagnóstico técnico: https://claude.ai/artifact/3CkFL3r24bEGGdGhAxEd1i
 - Design System (Entrega 06): https://claude.ai/artifact/7VHY5bS4hfBMXJDW5oWXjy
 - Wireframes (Entrega 07): https://claude.ai/artifact/81gTUtRADms5eA8ECt1VFL
-- Protótipo (Entrega 08): https://claude.ai/artifact/EChKbmJfKomznKJenp3kii
+- Protótipo (Entregas 08 e 09): https://claude.ai/artifact/EChKbmJfKomznKJenp3kii
+- Acessibilidade (Entrega 10): https://claude.ai/artifact/PanzqYR2UT8ag1fWG3Sj28
