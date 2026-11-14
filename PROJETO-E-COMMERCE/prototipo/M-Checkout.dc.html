@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore — Finalizar compra</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a454f2d6dd187c366c2b2bdd64101edd">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:1150px">
+<header style="background:#fff;border-bottom:1px solid var(--border)"><div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:16px;box-sizing:border-box"><a class="us-header__logo" href="M-Main.dc.html" style="color:#112058">Utili<span>Store</span></a><span class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra segura</span></div></header><main class="wrap">
+<ol class="g4" aria-label="Etapas da compra" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px"><sc-for list="{{steps}}" as="st" hint-placeholder-count="4"><li class="step {{st.cls}}" aria-current="{{st.cur}}"><span class="n">{{st.n}}</span>{{st.name}}</li></sc-for></ol>
+<div class="g2" style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start"><div style="display:flex;flex-direction:column;gap:20px">
+<sc-if value="{{s0}}" hint-placeholder-val="{{true}}"><section class="us-card" style="display:flex;flex-direction:column;gap:14px"><div class="us-row"><h2 class="h2">1. Identificação</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>GET /api/auth/me</span></div>
+<p style="margin:0">Você está comprando como <strong>Cliente Teste</strong>.</p><dl style="margin:0;display:grid;grid-template-columns:120px 1fr;gap:6px 12px" class="small"><dt class="muted">E-mail</dt><dd style="margin:0">cliente@utilistore.com</dd><dt class="muted">Telefone</dt><dd style="margin:0">(62) 99999-9999</dd></dl>
+<p class="small muted" style="margin:0">Dados errados? <a class="us-link" href="M-Conta.dc.html">Atualize em Minha conta</a>.</p>
+<button class="us-btn us-btn--primary" type="button" onClick="{{next}}" style="align-self:flex-start">Continuar para entrega</button></section></sc-if>
+<sc-if value="{{s1}}" hint-placeholder-val="{{false}}"><section class="us-card" style="display:flex;flex-direction:column;gap:14px"><div class="us-row"><h2 class="h2">2. Endereço de entrega</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>/api/enderecos (pendente)</span></div>
+<fieldset style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:10px"><legend class="us-sr-only">Escolha o endereço</legend><sc-for list="{{addrs}}" as="a" hint-placeholder-count="2"><label class="radio-card {{a.cls}}"><input type="radio" name="end" checked="{{a.on}}" onChange="{{a.pick}}"><span style="display:flex;flex-direction:column;gap:2px"><strong>{{a.apelido}}</strong><span class="small muted">{{a.linha}}</span></span></label></sc-for></fieldset>
+<sc-if value="{{noNew}}" hint-placeholder-val="{{true}}"><button class="us-btn us-btn--secondary" type="button" onClick="{{openNew}}" style="align-self:flex-start"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Novo endereço</button></sc-if>
+<sc-if value="{{showNew}}" hint-placeholder-val="{{false}}"><div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:14px"><h3 class="h3">Novo endereço</h3>
+<sc-if value="{{newErr}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--error" role="alert"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg><div><span class="us-alert__title">Preencha todos os campos obrigatórios.</span>Mensagem da API; os campos em vermelho precisam de atenção.</div></div></sc-if>
+<div class="g4" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+<div style="grid-column:span 2"><div class="us-field"><label class="us-label" for="na">Apelido</label><input class="us-input {{f.apelido.cls}}" id="na" type="text" autocomplete="" value="{{f.apelido.v}}" onChange="{{f.apelido.on}}" aria-invalid="{{f.apelido.inv}}" aria-describedby="na-h" ><p class="us-help {{f.apelido.hcls}}" id="na-h">{{f.apelido.help}}</p></div></div><div style="grid-column:span 2"><div class="us-field"><label class="us-label" for="nc">CEP</label><input class="us-input {{f.cep.cls}}" id="nc" type="text" autocomplete="" value="{{f.cep.v}}" onChange="{{f.cep.on}}" aria-invalid="{{f.cep.inv}}" aria-describedby="nc-h" inputmode="numeric" maxlength="9"><p class="us-help {{f.cep.hcls}}" id="nc-h">{{f.cep.help}}</p></div></div>
+<div style="grid-column:span 3"><div class="us-field"><label class="us-label" for="nl">Logradouro</label><input class="us-input {{f.logradouro.cls}}" id="nl" type="text" autocomplete="" value="{{f.logradouro.v}}" onChange="{{f.logradouro.on}}" aria-invalid="{{f.logradouro.inv}}" aria-describedby="nl-h" ><p class="us-help {{f.logradouro.hcls}}" id="nl-h">{{f.logradouro.help}}</p></div></div><div><div class="us-field"><label class="us-label" for="nn">Número</label><input class="us-input {{f.numero.cls}}" id="nn" type="text" autocomplete="" value="{{f.numero.v}}" onChange="{{f.numero.on}}" aria-invalid="{{f.numero.inv}}" aria-describedby="nn-h" ><p class="us-help {{f.numero.hcls}}" id="nn-h">{{f.numero.help}}</p></div></div>
+<div style="grid-column:span 2"><div class="us-field"><label class="us-label" for="nco">Complemento (opcional)</label><input class="us-input {{f.complemento.cls}}" id="nco" type="text" autocomplete="" value="{{f.complemento.v}}" onChange="{{f.complemento.on}}" aria-invalid="{{f.complemento.inv}}" aria-describedby="nco-h" ><p class="us-help {{f.complemento.hcls}}" id="nco-h">{{f.complemento.help}}</p></div></div><div style="grid-column:span 2"><div class="us-field"><label class="us-label" for="nb">Bairro</label><input class="us-input {{f.bairro.cls}}" id="nb" type="text" autocomplete="" value="{{f.bairro.v}}" onChange="{{f.bairro.on}}" aria-invalid="{{f.bairro.inv}}" aria-describedby="nb-h" ><p class="us-help {{f.bairro.hcls}}" id="nb-h">{{f.bairro.help}}</p></div></div>
+<div style="grid-column:span 3"><div class="us-field"><label class="us-label" for="ncd">Cidade</label><input class="us-input {{f.cidade.cls}}" id="ncd" type="text" autocomplete="" value="{{f.cidade.v}}" onChange="{{f.cidade.on}}" aria-invalid="{{f.cidade.inv}}" aria-describedby="ncd-h" ><p class="us-help {{f.cidade.hcls}}" id="ncd-h">{{f.cidade.help}}</p></div></div><div><div class="us-field"><label class="us-label" for="nu">UF</label><input class="us-input {{f.uf.cls}}" id="nu" type="text" autocomplete="" value="{{f.uf.v}}" onChange="{{f.uf.on}}" aria-invalid="{{f.uf.inv}}" aria-describedby="nu-h" maxlength="2"><p class="us-help {{f.uf.hcls}}" id="nu-h">{{f.uf.help}}</p></div></div></div>
+<div class="us-row"><button class="us-btn us-btn--primary" type="button" onClick="{{saveNew}}">Salvar endereço</button><button class="us-btn us-btn--secondary" type="button" onClick="{{closeNew}}">Cancelar</button></div></div></sc-if>
+<div class="us-row"><button class="us-btn us-btn--secondary" type="button" onClick="{{prev}}">Voltar</button><button class="us-btn us-btn--primary" type="button" onClick="{{next}}">Continuar para pagamento</button></div></section></sc-if>
+<sc-if value="{{s2}}" hint-placeholder-val="{{false}}"><section class="us-card" style="display:flex;flex-direction:column;gap:14px"><div class="us-row"><h2 class="h2">3. Pagamento</h2><span class="us-badge us-badge--demo">Demonstração</span></div>
+<p class="small muted" style="margin:0">Não há integração de pagamento no sistema: as opções abaixo só demonstram o fluxo.</p>
+<fieldset style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:10px"><legend class="us-sr-only">Forma de pagamento</legend><sc-for list="{{pays}}" as="p" hint-placeholder-count="3"><label class="radio-card {{p.cls}}"><input type="radio" name="pay" checked="{{p.on}}" onChange="{{p.pick}}"><span style="display:flex;flex-direction:column;gap:2px"><strong>{{p.name}}</strong><span class="small muted">{{p.desc}}</span></span></label></sc-for></fieldset>
+<div class="us-row"><button class="us-btn us-btn--secondary" type="button" onClick="{{prev}}">Voltar</button><button class="us-btn us-btn--primary" type="button" onClick="{{next}}">Revisar pedido</button></div></section></sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}"><section class="us-card" style="display:flex;flex-direction:column;gap:16px"><h2 class="h2">4. Revisão</h2>
+<div class="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px"><div class="us-card" style="box-shadow:none;padding:16px"><p class="us-card__meta">Cliente</p><p style="margin:0;font-weight:600">Cliente Teste</p><button class="us-btn us-btn--ghost us-btn--sm" type="button" onClick="{{go0}}" style="padding:0">Alterar</button></div><div class="us-card" style="box-shadow:none;padding:16px"><p class="us-card__meta">Entrega</p><p style="margin:0;font-weight:600">{{selAddr}}</p><button class="us-btn us-btn--ghost us-btn--sm" type="button" onClick="{{go1}}" style="padding:0">Alterar</button></div><div class="us-card" style="box-shadow:none;padding:16px"><p class="us-card__meta">Pagamento</p><p style="margin:0;font-weight:600">{{selPay}}</p><button class="us-btn us-btn--ghost us-btn--sm" type="button" onClick="{{go2}}" style="padding:0">Alterar</button></div></div>
+<div class="us-alert us-alert--info" role="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div>Ao confirmar, o pedido é criado com o status <strong>Pago</strong> (demonstração).</div></div>
+<div class="us-row"><button class="us-btn us-btn--secondary" type="button" onClick="{{prev}}">Voltar</button><a class="us-btn us-btn--buy" href="Confirmado.dc.html">Confirmar pedido</a></div></section></sc-if>
+</div>
+<aside class="us-card" aria-label="Resumo do pedido" style="display:flex;flex-direction:column;gap:12px"><div class="us-row"><h2 class="h3">Resumo do pedido</h2><span class="us-badge us-badge--demo">Demonstração</span></div>
+<div class="small" style="display:flex"><span>2× Pote Hermético de Vidro 1,5 L</span><span style="margin-left:auto">R$ 79,80</span></div><div class="small" style="display:flex"><span>1× Garrafa Térmica Inox 1 L</span><span style="margin-left:auto">R$ 64,50</span></div><div class="small" style="display:flex"><span>1× Carregador Turbo USB-C 65W</span><span style="margin-left:auto">R$ 89,90</span></div>
+<div class="small" style="display:flex"><span>Frete</span><span style="margin-left:auto">{{freteTxt}}</span></div>
+<div style="border-top:1px solid var(--border);padding-top:12px;display:flex;align-items:baseline"><strong>Total</strong><strong style="margin-left:auto;font-size:26px">{{totalTxt}}</strong></div></aside></div></main>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":2645}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+mkFields(defs){ const s = this.state; const out = {};
+ Object.keys(defs).forEach(k => { const err = (s.errs||{})[k] || ''; const ok = (s.oks||{})[k];
+  out[k] = { v: (s.vals||{})[k] ?? defs[k].v ?? '', cls: err ? 'is-error' : (ok ? 'is-success' : ''), inv: err ? 'true' : 'false', help: err || ok || defs[k].help || '', hcls: err ? 'us-help--error' : (ok ? 'us-help--success' : ''),
+   on: e => this.setState({vals: {...(this.state.vals||{}), [k]: e.target.value}, errs: {...(this.state.errs||{}), [k]: ''}, oks: {...(this.state.oks||{}), [k]: ''}}) }; });
+ return out; }
+val(k, d){ return ((this.state.vals||{})[k] ?? d ?? '').trim(); }
+
+renderVals(){ const s = this.state; const step = s.step || 0; const names = ['Identificação','Entrega','Pagamento','Revisão'];
+ const addrs = s.addrs || [{apelido:'Casa', linha:'Rua 10, 123 – Setor Central, Goiânia/GO · 74000-000'},{apelido:'Trabalho', linha:'Av. Goiás, 500, sala 3 – Centro, Goiânia/GO · 74005-010'}];
+ const ai = s.ai ?? 0; const pays = [{name:'Pix', desc:'Aprovação na hora'},{name:'Cartão de crédito', desc:'Em até [N]x'},{name:'Boleto', desc:'Compensação em até 3 dias úteis'}]; const pi = s.pi ?? 0;
+ return { hasToast: !!s.toast, toast: s.toast, cart: 4, acct: '',
+  steps: names.map((n,i) => ({ name: n, n: i < step ? '✓' : i + 1, cls: i < step ? 'done' : '', cur: i === step ? 'step' : 'false' })),
+  s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3,
+  next: () => this.setState({step: Math.min(3, step + 1)}), prev: () => this.setState({step: Math.max(0, step - 1)}),
+  go0: () => this.setState({step: 0}), go1: () => this.setState({step: 1}), go2: () => this.setState({step: 2}),
+  addrs: addrs.map((a,i) => ({...a, on: i === ai, cls: i === ai ? 'on' : '', pick: () => this.setState({ai: i})})),
+  pays: pays.map((p,i) => ({...p, on: i === pi, cls: i === pi ? 'on' : '', pick: () => this.setState({pi: i})})),
+  selAddr: addrs[ai].apelido + ' · ' + addrs[ai].linha.split('·')[0], selPay: pays[pi].name,
+  showNew: !!s.newOpen, noNew: !s.newOpen, openNew: () => this.setState({newOpen: true}), closeNew: () => this.setState({newOpen: false, errs: {}, vals: {}}),
+  newErr: !!s.newErr, f: this.mkFields({apelido:{help:'Ex.: Casa, Trabalho'}, cep:{help:''}, logradouro:{}, numero:{}, complemento:{}, bairro:{}, cidade:{}, uf:{help:'2 letras'}}),
+  saveNew: () => { const req = ['apelido','cep','logradouro','numero','bairro','cidade']; const er = {}; req.forEach(k => { if (!this.val(k)) er[k] = 'Campo obrigatório.'; }); if (this.val('uf').length !== 2) er.uf = 'Use a sigla com 2 letras.';
+    if (Object.keys(er).length) { this.setState({errs: er, newErr: true}); return; }
+    const a = {apelido: this.val('apelido'), linha: this.val('logradouro') + ', ' + this.val('numero') + ' – ' + this.val('bairro') + ', ' + this.val('cidade') + '/' + this.val('uf').toUpperCase() + ' · ' + this.val('cep')};
+    const list = addrs.concat([a]); this.setState({addrs: list, ai: list.length - 1, newOpen: false, newErr: false, vals: {}, errs: {}}); this.toastNow('Endereço salvo e selecionado'); },
+  freteTxt: step >= 1 ? 'R$ 15,00' : 'Escolha o endereço', totalTxt: step >= 1 ? 'R$ 249,20' : 'R$ 234,20' }; }
+}
+</script>
+</body>
+</html>

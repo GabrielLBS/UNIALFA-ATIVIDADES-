@@ -17,10 +17,465 @@
   {
    "id": "admin",
    "name": "Painel administrativo"
+  },
+  {
+   "id": "resp",
+   "name": "Responsivo (768 e 375)"
   }
  ],
- "boards": {},
- "order": [],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 1900,
+   "title": "01 · Página inicial",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Login.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1100,
+   "title": "02 · Login (+ recuperar senha)",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Cadastro.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 1250,
+   "title": "03 · Cadastro",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Catalogo.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 1800,
+   "title": "04 · Catálogo e pesquisa",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Produto.dc.html": {
+   "x": 0,
+   "y": 2080,
+   "w": 1440,
+   "h": 1900,
+   "title": "05 · Detalhes do produto",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Carrinho.dc.html": {
+   "x": 1520,
+   "y": 2080,
+   "w": 1440,
+   "h": 1100,
+   "title": "06 · Carrinho",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Checkout.dc.html": {
+   "x": 3040,
+   "y": 2080,
+   "w": 1440,
+   "h": 1150,
+   "title": "07 · Checkout (4 etapas)",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Confirmado.dc.html": {
+   "x": 4560,
+   "y": 2080,
+   "w": 1440,
+   "h": 820,
+   "title": "08 · Pedido confirmado",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Conta.dc.html": {
+   "x": 0,
+   "y": 4160,
+   "w": 1440,
+   "h": 1200,
+   "title": "09 · Minha conta (dados, segurança, endereços)",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "MeusPedidos.dc.html": {
+   "x": 1520,
+   "y": 4160,
+   "w": 1440,
+   "h": 1000,
+   "title": "10 · Meus pedidos",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "PedidoDetalhe.dc.html": {
+   "x": 3040,
+   "y": 4160,
+   "w": 1440,
+   "h": 1150,
+   "title": "11 · Detalhes do pedido",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Categorias.dc.html": {
+   "x": 4560,
+   "y": 4160,
+   "w": 1440,
+   "h": 900,
+   "title": "12 · Categorias",
+   "page": "loja",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminLogin.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 820,
+   "title": "13 · Login administrativo",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminDashboard.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1250,
+   "title": "14 · Dashboard",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminProdutos.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 1150,
+   "title": "15 · Produtos (lista, cadastro, edição, exclusão)",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminPedidos.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 1050,
+   "title": "16 · Pedidos (lista, detalhe, mudança de status)",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminClientes.dc.html": {
+   "x": 0,
+   "y": 1430,
+   "w": 1440,
+   "h": 950,
+   "title": "17 · Clientes (lista e ficha)",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminCategorias.dc.html": {
+   "x": 1520,
+   "y": 1430,
+   "w": 1440,
+   "h": 800,
+   "title": "18 · Categorias",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AdminConfig.dc.html": {
+   "x": 3040,
+   "y": 1430,
+   "w": 1440,
+   "h": 760,
+   "title": "19 · Configurações",
+   "page": "admin",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "T-Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 768,
+   "h": 2755,
+   "title": "01 · Página inicial · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Main.dc.html": {
+   "x": 848,
+   "y": 0,
+   "w": 375,
+   "h": 4370,
+   "title": "01 · Página inicial · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Login.dc.html": {
+   "x": 1463,
+   "y": 0,
+   "w": 768,
+   "h": 1595,
+   "title": "02 · Login (+ recuperar senha) · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Login.dc.html": {
+   "x": 2311,
+   "y": 0,
+   "w": 375,
+   "h": 2530,
+   "title": "02 · Login (+ recuperar senha) · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Catalogo.dc.html": {
+   "x": 2926,
+   "y": 0,
+   "w": 768,
+   "h": 2610,
+   "title": "04 · Catálogo e pesquisa · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Catalogo.dc.html": {
+   "x": 3774,
+   "y": 0,
+   "w": 375,
+   "h": 4140,
+   "title": "04 · Catálogo e pesquisa · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Produto.dc.html": {
+   "x": 0,
+   "y": 4590,
+   "w": 768,
+   "h": 2755,
+   "title": "05 · Detalhes do produto · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Produto.dc.html": {
+   "x": 848,
+   "y": 4590,
+   "w": 375,
+   "h": 4370,
+   "title": "05 · Detalhes do produto · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Carrinho.dc.html": {
+   "x": 1463,
+   "y": 4590,
+   "w": 768,
+   "h": 1595,
+   "title": "06 · Carrinho · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Carrinho.dc.html": {
+   "x": 2311,
+   "y": 4590,
+   "w": 375,
+   "h": 2530,
+   "title": "06 · Carrinho · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Checkout.dc.html": {
+   "x": 2926,
+   "y": 4590,
+   "w": 768,
+   "h": 1667,
+   "title": "07 · Checkout (4 etapas) · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Checkout.dc.html": {
+   "x": 3774,
+   "y": 4590,
+   "w": 375,
+   "h": 2645,
+   "title": "07 · Checkout (4 etapas) · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-Conta.dc.html": {
+   "x": 0,
+   "y": 9180,
+   "w": 768,
+   "h": 1740,
+   "title": "09 · Minha conta (dados, segurança, endereços) · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-Conta.dc.html": {
+   "x": 848,
+   "y": 9180,
+   "w": 375,
+   "h": 2760,
+   "title": "09 · Minha conta (dados, segurança, endereços) · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-MeusPedidos.dc.html": {
+   "x": 1463,
+   "y": 9180,
+   "w": 768,
+   "h": 1450,
+   "title": "10 · Meus pedidos · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-MeusPedidos.dc.html": {
+   "x": 2311,
+   "y": 9180,
+   "w": 375,
+   "h": 2300,
+   "title": "10 · Meus pedidos · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-PedidoDetalhe.dc.html": {
+   "x": 2926,
+   "y": 9180,
+   "w": 768,
+   "h": 1667,
+   "title": "11 · Detalhes do pedido · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-PedidoDetalhe.dc.html": {
+   "x": 3774,
+   "y": 9180,
+   "w": 375,
+   "h": 2645,
+   "title": "11 · Detalhes do pedido · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-AdminDashboard.dc.html": {
+   "x": 0,
+   "y": 12160,
+   "w": 768,
+   "h": 1812,
+   "title": "14 · Dashboard · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-AdminDashboard.dc.html": {
+   "x": 848,
+   "y": 12160,
+   "w": 375,
+   "h": 2875,
+   "title": "14 · Dashboard · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-AdminPedidos.dc.html": {
+   "x": 1463,
+   "y": 12160,
+   "w": 768,
+   "h": 1522,
+   "title": "16 · Pedidos (lista, detalhe, mudança de status) · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-AdminPedidos.dc.html": {
+   "x": 2311,
+   "y": 12160,
+   "w": 375,
+   "h": 2415,
+   "title": "16 · Pedidos (lista, detalhe, mudança de status) · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "T-AdminProdutos.dc.html": {
+   "x": 2926,
+   "y": 12160,
+   "w": 768,
+   "h": 1667,
+   "title": "15 · Produtos (lista, cadastro, edição, exclusão) · tablet 768px",
+   "page": "resp",
+   "is_interactive": true
+  },
+  "M-AdminProdutos.dc.html": {
+   "x": 3774,
+   "y": 12160,
+   "w": 375,
+   "h": 2645,
+   "title": "15 · Produtos (lista, cadastro, edição, exclusão) · mobile 375px",
+   "page": "resp",
+   "is_interactive": true
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Login.dc.html",
+  "Cadastro.dc.html",
+  "Catalogo.dc.html",
+  "Produto.dc.html",
+  "Carrinho.dc.html",
+  "Checkout.dc.html",
+  "Confirmado.dc.html",
+  "Conta.dc.html",
+  "MeusPedidos.dc.html",
+  "PedidoDetalhe.dc.html",
+  "Categorias.dc.html",
+  "AdminLogin.dc.html",
+  "AdminDashboard.dc.html",
+  "AdminProdutos.dc.html",
+  "AdminPedidos.dc.html",
+  "AdminClientes.dc.html",
+  "AdminCategorias.dc.html",
+  "AdminConfig.dc.html",
+  "T-Main.dc.html",
+  "M-Main.dc.html",
+  "T-Login.dc.html",
+  "M-Login.dc.html",
+  "T-Catalogo.dc.html",
+  "M-Catalogo.dc.html",
+  "T-Produto.dc.html",
+  "M-Produto.dc.html",
+  "T-Carrinho.dc.html",
+  "M-Carrinho.dc.html",
+  "T-Checkout.dc.html",
+  "M-Checkout.dc.html",
+  "T-Conta.dc.html",
+  "M-Conta.dc.html",
+  "T-MeusPedidos.dc.html",
+  "M-MeusPedidos.dc.html",
+  "T-PedidoDetalhe.dc.html",
+  "M-PedidoDetalhe.dc.html",
+  "T-AdminDashboard.dc.html",
+  "M-AdminDashboard.dc.html",
+  "T-AdminPedidos.dc.html",
+  "M-AdminPedidos.dc.html",
+  "T-AdminProdutos.dc.html",
+  "M-AdminProdutos.dc.html"
+ ],
  "notes": {
   "t-loja": {
    "x": 0,
@@ -53,6 +508,22 @@
    "page": "admin",
    "fill": "blue",
    "text": "Painel administrativo (todo em demonstração)\n\nLogin: qualquer e-mail válido e senha com 6+ caracteres.\n\nProdutos: busque, filtre, cadastre (valida campos), edite, exclua (com confirmação) e veja o aviso ao descartar alterações.\n\nPedidos: filtre por status, abra um pedido e avance o status com confirmação — o histórico registra a mudança.\n\nClientes: busque e abra a ficha."
+  },
+  "t-resp": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 09 · Interfaces responsivas: tablet 768px e mobile 375px",
+   "kind": "title1",
+   "maxW": 3800,
+   "page": "resp"
+  },
+  "n-resp": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "resp",
+   "fill": "teal",
+   "text": "Como as telas se adaptam\n\n• As mesmas telas do desktop, com o mesmo código: só a largura muda.\n• Header: no mobile a busca ganha linha própria e os textos de conta/carrinho viram só ícones; categorias rolam na horizontal.\n• Produtos: 4 colunas → 3 (tablet largo) → 2 (tablet e mobile), com card mais compacto no celular.\n• Layouts de duas colunas (filtros + lista, itens + resumo) empilham abaixo de 860px.\n• Produto: no mobile, quantidade e “Adicionar ao carrinho” ficam fixos no rodapé.\n• Tabelas viram cartões com rótulo em cada linha abaixo de 640px.\n• Painel: o menu lateral vira uma faixa rolável no topo.\n• Modais: botões empilhados e na largura toda no celular.\n• Em Play, os links destas telas navegam entre as versões do mesmo tamanho."
   }
  },
  "designSystems": [

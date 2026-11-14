@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>UtiliStore — Login</title>
 <script src="./support.js"></script>
-<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+<link rel="stylesheet" href="/_blob/a454f2d6dd187c366c2b2bdd64101edd">
 </head>
 <body>
 <x-dc>
@@ -18,7 +18,7 @@
 <form class="us-search" role="search" style="flex:1 1 360px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias"><a href="Catalogo.dc.html" style="min-height:40px;margin:2px;padding:0 16px;border-radius:8px;background:#112058;color:#fff;font:600 14px/40px Inter,sans-serif;text-decoration:none">Buscar</a></form>
 <div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
 <nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" >Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap" style="max-width:1000px">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding-top:24px">
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding-top:24px">
 <div style="display:flex;flex-direction:column;gap:16px"><h1 class="h1">Entre na sua conta</h1><p class="muted" style="margin:0">Para finalizar compras e acompanhar seus pedidos.</p>
 <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
 <li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path></svg>Acompanhe seus pedidos</li><li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Salve seus endereços</li><li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra mais rápida e segura</li></ul>
@@ -41,7 +41,7 @@
 <sc-if value="{{forgotForm}}" hint-placeholder-val="{{true}}"><p class="muted small" style="margin:0">Informe o e-mail da sua conta. Enviaremos as instruções para criar uma nova senha.</p>
 <div class="us-field"><label class="us-label" for="fe">E-mail</label><input class="us-input {{feCls}}" id="fe" type="email" value="{{fe}}" onChange="{{onFe}}" aria-describedby="fe-h"><p class="us-help us-help--error" id="fe-h">{{feErr}}</p></div>
 <div class="us-modal__actions"><button class="us-btn us-btn--secondary" type="button" onClick="{{closeForgot}}">Cancelar</button><button class="us-btn us-btn--primary" type="button" onClick="{{sendForgot}}">Enviar instruções</button></div></sc-if>
-</div></div></sc-if><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+</div></div></sc-if><footer class="footer"><div class="g4 wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
 <div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>

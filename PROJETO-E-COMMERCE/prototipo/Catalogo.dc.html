@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>UtiliStore — Catálogo</title>
 <script src="./support.js"></script>
-<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+<link rel="stylesheet" href="/_blob/a454f2d6dd187c366c2b2bdd64101edd">
 </head>
 <body>
 <x-dc>
@@ -20,7 +20,7 @@
 <nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" aria-current="page">Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap">
 <nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><span aria-current="page">{{crumb}}</span></li></ol></nav>
 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h1 class="h1">{{title}}</h1><span class="us-badge us-badge--demo">Demonstração</span><span class="muted small" role="status">{{countTxt}}</span></div>
-<div style="display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start">
+<div class="g2 gside" style="display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start">
 <aside class="us-card" aria-label="Filtros" style="display:flex;flex-direction:column;gap:18px"><h2 class="h3">Filtros</h2>
 <fieldset style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px"><legend class="us-label" style="margin-bottom:6px">Categoria</legend>
 <sc-for list="{{catOpts}}" as="c" hint-placeholder-count="5"><label style="display:flex;gap:10px;align-items:center;min-height:36px;font-size:15px"><input type="checkbox" checked="{{c.on}}" onChange="{{c.toggle}}" style="width:20px;height:20px;accent-color:#112058">{{c.name}}</label></sc-for></fieldset>
@@ -28,7 +28,7 @@
 <button class="us-btn us-btn--secondary" type="button" onClick="{{clear}}">Limpar filtros</button></aside>
 <div style="display:flex;flex-direction:column;gap:20px">
 <div style="display:flex;justify-content:flex-end"><div class="us-field" style="width:240px"><label class="us-label" for="ord">Ordenar por</label><select class="us-select" id="ord" value="{{ord}}" onChange="{{onOrd}}"><option value="rel">Mais relevantes</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option></select></div></div>
-<sc-if value="{{has}}" hint-placeholder-val="{{true}}"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px"><sc-for list="{{items}}" as="p" hint-placeholder-count="4">
+<sc-if value="{{has}}" hint-placeholder-val="{{true}}"><div class="g3 gp" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px"><sc-for list="{{items}}" as="p" hint-placeholder-count="4">
 <article class="us-product">
 <div class="us-product__media"><span class="cat-ico" style="width:88px;height:88px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path></svg></span><sc-if value="{{p.hasDesc}}" hint-placeholder-val="{{true}}"><span class="us-product__discount">-{{p.desc}}%</span></sc-if><button class="us-icon-btn us-product__fav" type="button" aria-label="Favoritar {{p.nome}}" aria-pressed="{{p.fav}}" onClick="{{p.toggleFav}}" style="color:#C2410C"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button></div>
 <div class="us-product__body"><h3 class="us-product__name"><a href="Produto.dc.html">{{p.nome}}</a></h3>
@@ -38,7 +38,7 @@
 </div></article></sc-for></div>
 <nav aria-label="Paginação"><div class="us-pagination"><a class="us-page" aria-disabled="true" aria-label="Página anterior"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></a><a class="us-page" href="Catalogo.dc.html" aria-current="page">1</a><a class="us-page" aria-disabled="true" aria-label="Próxima página"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a><span class="us-pagination__info">{{countTxt}}</span></div></nav></sc-if>
 <sc-if value="{{none}}" hint-placeholder-val="{{false}}"><div class="us-card" style="display:flex;flex-direction:column;gap:12px;padding:32px"><h2 class="h2">{{emptyTitle}}</h2><p class="muted" style="margin:0">Confira a grafia, use um termo mais geral ou limpe os filtros.</p><div class="us-row"><button class="us-btn us-btn--primary" type="button" onClick="{{clear}}">Limpar busca e filtros</button><a class="us-btn us-btn--secondary" href="Main.dc.html">Ver ofertas</a></div></div></sc-if>
-</div></div></main><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+</div></div></main><footer class="footer"><div class="g4 wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
 <div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>

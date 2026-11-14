@@ -17,7 +17,7 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 | 06 | Identidade visual e Design System | [design-system/](design-system/) (tokens, 16 componentes, README) | ✅ Concluída |
 | 07 | Wireframes | [wireframes/](wireframes/) (32 telas) | ✅ Aprovada |
 | 08 | Protótipos de alta fidelidade | [prototipo/](prototipo/) (19 telas interativas) | ✅ Concluída |
-| 09 | Interfaces responsivas | — | Pendente |
+| 09 | Interfaces responsivas | [prototipo/RESPONSIVO.md](prototipo/RESPONSIVO.md) (12 telas em 768 e 375px) | ✅ Concluída |
 | 10 | Análise de acessibilidade | — | Pendente |
 | 11 | Avaliação de usabilidade | — | Pendente |
 | 12 | Documentação das decisões de design | — | Pendente |

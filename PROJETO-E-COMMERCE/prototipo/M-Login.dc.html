@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore — Login</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/a454f2d6dd187c366c2b2bdd64101edd">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:1100px">
+<header class="us-header"><div class="us-header__bar" style="flex-wrap:wrap;max-width:1200px;margin:0 auto;box-sizing:border-box">
+<a class="us-header__logo" href="M-Main.dc.html" aria-label="UtiliStore, página inicial">Utili<span>Store</span></a>
+<form class="us-search" role="search" style="flex:1 1 360px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias"><a href="M-Catalogo.dc.html" style="min-height:40px;margin:2px;padding:0 16px;border-radius:8px;background:#112058;color:#fff;font:600 14px/40px Inter,sans-serif;text-decoration:none">Buscar</a></form>
+<div class="us-header__actions"><a class="us-header__action" href="M-Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="M-Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
+<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="M-Catalogo.dc.html" >Cozinha</a><a href="M-Catalogo.dc.html" >Limpeza</a><a href="M-Catalogo.dc.html" >Organização</a><a href="M-Catalogo.dc.html" >Banheiro</a><a href="M-Catalogo.dc.html" >Ferramentas</a><a href="M-Catalogo.dc.html" >Eletroportáteis</a><a href="M-Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap" style="max-width:1000px">
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding-top:24px">
+<div style="display:flex;flex-direction:column;gap:16px"><h1 class="h1">Entre na sua conta</h1><p class="muted" style="margin:0">Para finalizar compras e acompanhar seus pedidos.</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+<li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path></svg>Acompanhe seus pedidos</li><li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Salve seus endereços</li><li style="display:flex;gap:10px;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Compra mais rápida e segura</li></ul>
+<div class="us-alert us-alert--info" role="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div><span class="us-alert__title">Para testar o protótipo</span>Use cliente@utilistore.com ou 62999999999 com a senha 123456 (o usuário de teste do repositório).</div></div></div>
+<div class="us-card" style="padding:28px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;gap:8px;align-items:center"><h2 class="h3">Login</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Integrado à API</span></div>
+<sc-if value="{{showErr}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--error" role="alert"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg><div><span class="us-alert__title">{{errMsg}}</span>Confira os dados ou recupere sua senha.</div></div></sc-if>
+<sc-if value="{{ok}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><div><span class="us-alert__title">Login realizado com sucesso!</span>Bem-vinda, Cliente Teste. <a class="us-link" href="M-Main.dc.html">Continuar comprando</a></div></div></sc-if>
+<form style="display:flex;flex-direction:column;gap:16px" onSubmit="{{submit}}" novalidate="{{true}}">
+<div class="us-field"><label class="us-label" for="lg">E-mail ou telefone</label><input class="us-input {{loginCls}}" id="lg" type="text" inputmode="email" autocomplete="username" placeholder="seuemail@exemplo.com" value="{{login}}" onChange="{{onLogin}}" aria-invalid="{{loginInvalid}}" aria-describedby="lg-h"><p class="us-help {{loginHelpCls}}" id="lg-h">{{loginHelp}}</p></div>
+<div class="us-field"><label class="us-label" for="pw">Senha</label><div class="us-input-wrap"><input class="us-input {{senhaCls}}" id="pw" type="{{pwType}}" autocomplete="current-password" value="{{senha}}" onChange="{{onSenha}}" aria-invalid="{{senhaInvalid}}" aria-describedby="pw-h"><button class="us-icon-btn" type="button" aria-label="{{pwLabel}}" aria-pressed="{{pwShown}}" onClick="{{togglePw}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div><p class="us-help {{senhaHelpCls}}" id="pw-h">{{senhaHelp}}</p></div>
+<div style="display:flex;justify-content:flex-end"><button class="us-btn us-btn--ghost us-btn--sm" type="button" onClick="{{openForgot}}">Esqueci minha senha</button></div>
+<button class="us-btn us-btn--primary us-btn--block" type="submit" disabled="{{loading}}" aria-busy="{{loading}}"><sc-if value="{{loading}}" hint-placeholder-val="{{false}}"><span class="us-spinner" aria-hidden="true"></span>Entrando…</sc-if><sc-if value="{{notLoading}}" hint-placeholder-val="{{true}}">Entrar</sc-if></button>
+</form>
+<p class="small" style="margin:0;border-top:1px solid var(--border);padding-top:16px">Ainda não tem conta? <a class="us-link" href="Cadastro.dc.html">Criar conta</a></p>
+</div></div></main>
+<sc-if value="{{forgot}}" hint-placeholder-val="{{false}}"><div class="modal-host us-overlay"><div class="us-modal" role="dialog" aria-modal="true" aria-labelledby="fg-t">
+<div class="us-modal__head"><h2 class="us-modal__title" id="fg-t">Recuperar senha</h2><button class="us-icon-btn" type="button" aria-label="Fechar" onClick="{{closeForgot}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div><span class="us-badge us-badge--demo">Demonstração</span>
+<sc-if value="{{forgotSent}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><div>Se este e-mail estiver cadastrado, você receberá as instruções em instantes.</div></div><button class="us-btn us-btn--primary" type="button" onClick="{{closeForgot}}">Voltar ao login</button></sc-if>
+<sc-if value="{{forgotForm}}" hint-placeholder-val="{{true}}"><p class="muted small" style="margin:0">Informe o e-mail da sua conta. Enviaremos as instruções para criar uma nova senha.</p>
+<div class="us-field"><label class="us-label" for="fe">E-mail</label><input class="us-input {{feCls}}" id="fe" type="email" value="{{fe}}" onChange="{{onFe}}" aria-describedby="fe-h"><p class="us-help us-help--error" id="fe-h">{{feErr}}</p></div>
+<div class="us-modal__actions"><button class="us-btn us-btn--secondary" type="button" onClick="{{closeForgot}}">Cancelar</button><button class="us-btn us-btn--primary" type="button" onClick="{{sendForgot}}">Enviar instruções</button></div></sc-if>
+</div></div></sc-if><footer class="footer"><div class="g4 wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="M-Main.dc.html">Sobre a UtiliStore</a><a class="small" href="M-Main.dc.html">Política de privacidade</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="M-MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="M-Main.dc.html">Trocas e devoluções</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Compra segura</strong><span class="small">Dados protegidos e senha armazenada com criptografia.</span></div>
+</div></footer>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":375,"height":2530}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+renderVals(){ const s = this.state; const le = s.loginErr || '', se = s.senhaErr || '';
+ return { hasToast: !!s.toast, toast: s.toast, cart: s.cart, acct: s.ok ? 'Olá, Cliente' : 'Entrar',
+  login: s.login || '', senha: s.senha || '', loading: !!s.loading, notLoading: !s.loading, ok: !!s.ok,
+  showErr: !!s.err, errMsg: s.err || '',
+  loginCls: le ? 'is-error' : '', loginInvalid: le ? 'true' : 'false', loginHelp: le || 'Use o e-mail ou o celular com DDD.', loginHelpCls: le ? 'us-help--error' : '',
+  senhaCls: se ? 'is-error' : '', senhaInvalid: se ? 'true' : 'false', senhaHelp: se || 'Mínimo de 6 caracteres.', senhaHelpCls: se ? 'us-help--error' : '',
+  pwType: s.pw ? 'text' : 'password', pwShown: s.pw ? 'true' : 'false', pwLabel: s.pw ? 'Ocultar senha' : 'Mostrar senha',
+  togglePw: () => this.setState({pw: !s.pw}),
+  onLogin: e => this.setState({login: e.target.value, loginErr: ''}), onSenha: e => this.setState({senha: e.target.value, senhaErr: ''}),
+  submit: e => { e.preventDefault(); const l = (s.login||'').trim(), p = s.senha || ''; let le2 = '', se2 = '';
+    if (!l) le2 = 'Informe seu e-mail ou telefone.'; if (!p) se2 = 'Informe sua senha.';
+    if (le2 || se2) { this.setState({loginErr: le2, senhaErr: se2, err: '', ok: false}); return; }
+    this.setState({loading: true, err: '', ok: false});
+    setTimeout(() => { const good = (l.toLowerCase() === 'cliente@utilistore.com' || l.replace(/\D/g,'') === '62999999999') && p === '123456';
+      this.setState(good ? {loading: false, ok: true} : {loading: false, err: 'Login ou senha inválidos'}); }, 900); },
+  forgot: !!s.forgot, forgotSent: !!s.sent, forgotForm: !s.sent, fe: s.fe || '', feErr: s.feErr || '', feCls: s.feErr ? 'is-error' : '',
+  openForgot: () => this.setState({forgot: true, sent: false, fe: '', feErr: ''}), closeForgot: () => this.setState({forgot: false}),
+  onFe: e => this.setState({fe: e.target.value, feErr: ''}),
+  sendForgot: () => { const v = (s.fe||'').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { this.setState({feErr: 'Digite um e-mail válido.'}); return; } this.setState({sent: true}); }
+ }; }
+}
+</script>
+</body>
+</html>

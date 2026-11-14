@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>UtiliStore — Criar conta</title>
 <script src="./support.js"></script>
-<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+<link rel="stylesheet" href="/_blob/a454f2d6dd187c366c2b2bdd64101edd">
 </head>
 <body>
 <x-dc>
@@ -19,7 +19,7 @@
 <div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
 <nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" >Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap" style="max-width:1000px">
 <nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><span aria-current="page">Criar conta</span></li></ol></nav>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:14px"><h1 class="h1">Crie sua conta</h1><p class="muted" style="margin:0">Leva menos de um minuto. Só pedimos o necessário para entregar e falar com você.</p>
 <div class="us-alert us-alert--warning" role="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div><span class="us-alert__title">Cadastro em demonstração</span>A API ainda não tem rota de cadastro: nada é gravado. Para entrar, use o usuário de teste.</div></div></div>
 <div class="us-card" style="padding:28px">
@@ -29,7 +29,7 @@
 <div class="us-field"><label class="us-label" for="cn">Nome completo</label><input class="us-input {{f.nome.cls}}" id="cn" type="text" autocomplete="name" value="{{f.nome.v}}" onChange="{{f.nome.on}}" aria-invalid="{{f.nome.inv}}" aria-describedby="cn-h" ><p class="us-help {{f.nome.hcls}}" id="cn-h">{{f.nome.help}}</p></div><div class="us-field"><label class="us-label" for="ce">E-mail</label><input class="us-input {{f.email.cls}}" id="ce" type="email" autocomplete="email" value="{{f.email.v}}" onChange="{{f.email.on}}" aria-invalid="{{f.email.inv}}" aria-describedby="ce-h" ><p class="us-help {{f.email.hcls}}" id="ce-h">{{f.email.help}}</p></div><div class="us-field"><label class="us-label" for="ct">Telefone (celular com DDD)</label><input class="us-input {{f.tel.cls}}" id="ct" type="tel" autocomplete="tel" value="{{f.tel.v}}" onChange="{{f.tel.on}}" aria-invalid="{{f.tel.inv}}" aria-describedby="ct-h" ><p class="us-help {{f.tel.hcls}}" id="ct-h">{{f.tel.help}}</p></div><div class="us-field"><label class="us-label" for="cs">Senha</label><input class="us-input {{f.senha.cls}}" id="cs" type="password" autocomplete="new-password" value="{{f.senha.v}}" onChange="{{f.senha.on}}" aria-invalid="{{f.senha.inv}}" aria-describedby="cs-h" ><p class="us-help {{f.senha.hcls}}" id="cs-h">{{f.senha.help}}</p></div><div class="us-field"><label class="us-label" for="cc">Confirmar senha</label><input class="us-input {{f.conf.cls}}" id="cc" type="password" autocomplete="new-password" value="{{f.conf.v}}" onChange="{{f.conf.on}}" aria-invalid="{{f.conf.inv}}" aria-describedby="cc-h" ><p class="us-help {{f.conf.hcls}}" id="cc-h">{{f.conf.help}}</p></div>
 <button class="us-btn us-btn--primary us-btn--block" type="submit">Criar conta</button>
 <p class="small" style="margin:0">Já tem conta? <a class="us-link" href="Login.dc.html">Entrar</a></p></form></sc-if>
-</div></div></main><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+</div></div></main><footer class="footer"><div class="g4 wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
 <div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
 <div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>
