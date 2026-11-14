@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore — Minha conta</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:1200px">
+<header class="us-header"><div class="us-header__bar" style="flex-wrap:wrap;max-width:1200px;margin:0 auto;box-sizing:border-box">
+<a class="us-header__logo" href="Main.dc.html" aria-label="UtiliStore, página inicial">Utili<span>Store</span></a>
+<form class="us-search" role="search" style="flex:1 1 360px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias"><a href="Catalogo.dc.html" style="min-height:40px;margin:2px;padding:0 16px;border-radius:8px;background:#112058;color:#fff;font:600 14px/40px Inter,sans-serif;text-decoration:none">Buscar</a></form>
+<div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
+<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" >Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap">
+<nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><span>Minha conta</span></li><li><span aria-current="page">{{tabName}}</span></li></ol></nav>
+<h1 class="h1">Minha conta</h1>
+<div style="display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:start">
+<nav aria-label="Minha conta"><ul class="us-menu" style="box-shadow:none"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><li><button class="us-menu__item" type="button" aria-current="{{t.cur}}" onClick="{{t.pick}}">{{t.name}}</button></li></sc-for><li><a class="us-menu__item" href="MeusPedidos.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"></path></svg>Meus pedidos</a></li><li class="us-menu__sep" role="separator"></li><li><a class="us-menu__item us-menu__item--danger" href="Main.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"></path></svg>Sair</a></li></ul></nav>
+<div style="display:flex;flex-direction:column;gap:20px">
+<sc-if value="{{t0}}" hint-placeholder-val="{{true}}"><section class="us-card" style="display:flex;flex-direction:column;gap:16px;max-width:620px"><div class="us-row"><h2 class="h2">Dados pessoais</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>GET /me · PUT /clientes/me</span></div>
+<div class="us-field"><label class="us-label" for="dn">Nome completo</label><input class="us-input {{f.nome.cls}}" id="dn" type="text" autocomplete="name" value="{{f.nome.v}}" onChange="{{f.nome.on}}" aria-invalid="{{f.nome.inv}}" aria-describedby="dn-h" ><p class="us-help {{f.nome.hcls}}" id="dn-h">{{f.nome.help}}</p></div><div class="us-field"><label class="us-label" for="de">E-mail</label><input class="us-input {{f.email.cls}}" id="de" type="email" autocomplete="email" value="{{f.email.v}}" onChange="{{f.email.on}}" aria-invalid="{{f.email.inv}}" aria-describedby="de-h" ><p class="us-help {{f.email.hcls}}" id="de-h">{{f.email.help}}</p></div><div class="us-field"><label class="us-label" for="dt">Telefone</label><input class="us-input {{f.tel.cls}}" id="dt" type="tel" autocomplete="tel" value="{{f.tel.v}}" onChange="{{f.tel.on}}" aria-invalid="{{f.tel.inv}}" aria-describedby="dt-h" ><p class="us-help {{f.tel.hcls}}" id="dt-h">{{f.tel.help}}</p></div>
+<div class="us-row"><button class="us-btn us-btn--primary {{saveCls}}" type="button" onClick="{{saveDados}}">{{saveLabel}}</button></div></section></sc-if>
+<sc-if value="{{t1}}" hint-placeholder-val="{{false}}"><section class="us-card" style="display:flex;flex-direction:column;gap:16px;max-width:620px"><div class="us-row"><h2 class="h2">Trocar senha</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>PUT /clientes/me/senha</span></div>
+<sc-if value="{{pwErr}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--error" role="alert"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg><div><span class="us-alert__title">Senha atual incorreta.</span>Mensagem da API. Para testar, a senha atual é 123456.</div></div></sc-if>
+<div class="us-field"><label class="us-label" for="sa">Senha atual</label><input class="us-input {{f.atual.cls}}" id="sa" type="password" autocomplete="current-password" value="{{f.atual.v}}" onChange="{{f.atual.on}}" aria-invalid="{{f.atual.inv}}" aria-describedby="sa-h" ><p class="us-help {{f.atual.hcls}}" id="sa-h">{{f.atual.help}}</p></div><div class="us-field"><label class="us-label" for="sn">Nova senha</label><input class="us-input {{f.nova.cls}}" id="sn" type="password" autocomplete="new-password" value="{{f.nova.v}}" onChange="{{f.nova.on}}" aria-invalid="{{f.nova.inv}}" aria-describedby="sn-h" ><p class="us-help {{f.nova.hcls}}" id="sn-h">{{f.nova.help}}</p></div><div class="us-field"><label class="us-label" for="sc">Confirmar nova senha</label><input class="us-input {{f.conf.cls}}" id="sc" type="password" autocomplete="new-password" value="{{f.conf.v}}" onChange="{{f.conf.on}}" aria-invalid="{{f.conf.inv}}" aria-describedby="sc-h" ><p class="us-help {{f.conf.hcls}}" id="sc-h">{{f.conf.help}}</p></div>
+<button class="us-btn us-btn--primary" type="button" onClick="{{savePw}}" style="align-self:flex-start">Atualizar senha</button></section>
+<section class="us-card" style="display:flex;flex-direction:column;gap:12px;max-width:620px;border-color:var(--danger)"><h2 class="h3">Excluir conta</h2><p class="muted small" style="margin:0">Seus dados e endereços salvos serão apagados. Essa ação não pode ser desfeita.</p><button class="us-btn us-btn--danger" type="button" onClick="{{openDel}}" style="align-self:flex-start"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"></path></svg>Excluir minha conta</button></section></sc-if>
+<sc-if value="{{t2}}" hint-placeholder-val="{{false}}"><section style="display:flex;flex-direction:column;gap:16px"><div class="us-row"><h2 class="h2">Endereços</h2><span class="us-badge us-badge--pago"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>/api/enderecos (pendente)</span></div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px"><sc-for list="{{addrs}}" as="a" hint-placeholder-count="2"><div class="us-card" style="display:flex;flex-direction:column;gap:8px"><p class="us-card__title">{{a.apelido}}</p><p class="us-card__meta">{{a.linha}}</p><div class="us-row" style="gap:8px"><button class="us-btn us-btn--danger us-btn--sm" type="button" onClick="{{a.del}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"></path></svg>Excluir<span class="us-sr-only"> {{a.apelido}}</span></button></div></div></sc-for></div>
+<sc-if value="{{noAddr}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--info" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div>Você ainda não tem endereços salvos.</div></div></sc-if></section></sc-if>
+</div></div></main>
+<sc-if value="{{del}}" hint-placeholder-val="{{false}}"><div class="modal-host us-overlay"><div class="us-modal" role="dialog" aria-modal="true" aria-labelledby="dl-t" aria-describedby="dl-d">
+<div class="us-modal__head"><h2 class="us-modal__title" id="dl-t">Excluir sua conta?</h2><button class="us-icon-btn" type="button" aria-label="Fechar" onClick="{{closeDel}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<p id="dl-d" class="muted" style="margin:0">Seus dados e endereços salvos serão apagados. Essa ação não pode ser desfeita.</p>
+<sc-if value="{{delDone}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><div>Conta excluída (demonstração). <a class="us-link" href="Main.dc.html">Voltar à loja</a></div></div></sc-if>
+<sc-if value="{{delForm}}" hint-placeholder-val="{{true}}"><div class="us-field"><label class="us-label" for="dp">Digite sua senha para confirmar</label><input class="us-input {{f.delpw.cls}}" id="dp" type="password" autocomplete="current-password" value="{{f.delpw.v}}" onChange="{{f.delpw.on}}" aria-invalid="{{f.delpw.inv}}" aria-describedby="dp-h" ><p class="us-help {{f.delpw.hcls}}" id="dp-h">{{f.delpw.help}}</p></div>
+<div class="us-modal__actions"><button class="us-btn us-btn--secondary" type="button" onClick="{{closeDel}}">Cancelar</button><button class="us-btn us-btn--danger" type="button" onClick="{{confirmDel}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"></path></svg>Excluir conta</button></div></sc-if></div></div></sc-if><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Compra segura</strong><span class="small">Dados protegidos e senha armazenada com criptografia.</span></div>
+</div></footer>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+mkFields(defs){ const s = this.state; const out = {};
+ Object.keys(defs).forEach(k => { const err = (s.errs||{})[k] || ''; const ok = (s.oks||{})[k];
+  out[k] = { v: (s.vals||{})[k] ?? defs[k].v ?? '', cls: err ? 'is-error' : (ok ? 'is-success' : ''), inv: err ? 'true' : 'false', help: err || ok || defs[k].help || '', hcls: err ? 'us-help--error' : (ok ? 'us-help--success' : ''),
+   on: e => this.setState({vals: {...(this.state.vals||{}), [k]: e.target.value}, errs: {...(this.state.errs||{}), [k]: ''}, oks: {...(this.state.oks||{}), [k]: ''}}) }; });
+ return out; }
+val(k, d){ return ((this.state.vals||{})[k] ?? d ?? '').trim(); }
+
+renderVals(){ const s = this.state; const tab = s.tab || 0; const names = ['Dados pessoais','Segurança','Endereços'];
+ const addrs = s.addrs || [{apelido:'Casa', linha:'Rua 10, 123 – Setor Central, Goiânia/GO · 74000-000'},{apelido:'Trabalho', linha:'Av. Goiás, 500, sala 3 – Centro, Goiânia/GO · 74005-010'}];
+ const ss = s.saveSt || '';
+ return { hasToast: !!s.toast, toast: s.toast, cart: 2, acct: 'Olá, Cliente', tabName: names[tab],
+  tabs: names.map((n,i) => ({name: n, cur: i === tab ? 'page' : 'false', pick: () => this.setState({tab: i, errs: {}, oks: {}, pwErr: false})})),
+  t0: tab === 0, t1: tab === 1, t2: tab === 2,
+  f: this.mkFields({nome:{v:'Cliente Teste'}, email:{v:'cliente@utilistore.com'}, tel:{v:'62999999999', help:'Também serve para entrar na conta.'}, atual:{}, nova:{help:'Mínimo de 6 caracteres.'}, conf:{}, delpw:{}}),
+  saveLabel: ss === 'saving' ? 'Salvando…' : 'Salvar alterações', saveCls: ss === 'saving' ? 'is-loading' : '',
+  saveDados: () => { const er = {}; if (this.val('nome','Cliente Teste').length < 3) er.nome = 'Informe seu nome completo.'; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.val('email','cliente@utilistore.com'))) er.email = 'Digite um e-mail válido.'; const t = this.val('tel','62999999999').replace(/\D/g,''); if (t.length < 10) er.tel = 'Digite o celular com DDD.';
+    if (Object.keys(er).length) { this.setState({errs: er}); return; } this.setState({saveSt: 'saving'}); setTimeout(() => { this.setState({saveSt: ''}); this.toastNow('Dados atualizados'); }, 800); },
+  pwErr: !!s.pwErr,
+  savePw: () => { const v = s.vals || {}; const er = {}; if (!v.atual) er.atual = 'Informe sua senha atual.'; if (!v.nova || v.nova.length < 6) er.nova = 'A nova senha precisa ter pelo menos 6 caracteres.'; if (v.conf !== v.nova) er.conf = 'As senhas não coincidem.';
+    if (Object.keys(er).length) { this.setState({errs: er, pwErr: false}); return; } if (v.atual !== '123456') { this.setState({pwErr: true, errs: {atual: 'Senha atual incorreta.'}}); return; }
+    this.setState({pwErr: false, vals: {}, errs: {}}); this.toastNow('Senha atualizada'); },
+  addrs: addrs.map((a,i) => ({...a, del: () => { this.setState({addrs: addrs.filter((_,j) => j !== i)}); this.toastNow('Endereço excluído'); }})), noAddr: addrs.length === 0,
+  del: !!s.del, delDone: !!s.delDone, delForm: !s.delDone, openDel: () => this.setState({del: true, delDone: false}), closeDel: () => this.setState({del: false, errs: {}}),
+  confirmDel: () => { const p = (s.vals||{}).delpw || ''; if (!p) { this.setState({errs: {delpw: 'Informe sua senha.'}}); return; } if (p !== '123456') { this.setState({errs: {delpw: 'Senha incorreta.'}}); return; } this.setState({delDone: true}); } }; }
+}
+</script>
+</body>
+</html>

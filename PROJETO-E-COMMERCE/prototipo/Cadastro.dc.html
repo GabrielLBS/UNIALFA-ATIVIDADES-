@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore — Criar conta</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:1250px">
+<header class="us-header"><div class="us-header__bar" style="flex-wrap:wrap;max-width:1200px;margin:0 auto;box-sizing:border-box">
+<a class="us-header__logo" href="Main.dc.html" aria-label="UtiliStore, página inicial">Utili<span>Store</span></a>
+<form class="us-search" role="search" style="flex:1 1 360px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias"><a href="Catalogo.dc.html" style="min-height:40px;margin:2px;padding:0 16px;border-radius:8px;background:#112058;color:#fff;font:600 14px/40px Inter,sans-serif;text-decoration:none">Buscar</a></form>
+<div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
+<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" >Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap" style="max-width:1000px">
+<nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><span aria-current="page">Criar conta</span></li></ol></nav>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:14px"><h1 class="h1">Crie sua conta</h1><p class="muted" style="margin:0">Leva menos de um minuto. Só pedimos o necessário para entregar e falar com você.</p>
+<div class="us-alert us-alert--warning" role="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div><span class="us-alert__title">Cadastro em demonstração</span>A API ainda não tem rota de cadastro: nada é gravado. Para entrar, use o usuário de teste.</div></div></div>
+<div class="us-card" style="padding:28px">
+<sc-if value="{{done}}" hint-placeholder-val="{{false}}"><div style="display:flex;flex-direction:column;gap:16px"><div class="us-alert us-alert--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><div><span class="us-alert__title">Conta criada (demonstração)</span>Bem-vinda, {{firstName}}! No sistema real você já entraria logada.</div></div><a class="us-btn us-btn--primary" href="Main.dc.html">Ir para a loja</a></div></sc-if>
+<sc-if value="{{notDone}}" hint-placeholder-val="{{true}}"><form style="display:flex;flex-direction:column;gap:16px" onSubmit="{{submit}}" novalidate="{{true}}">
+<sc-if value="{{hasErrs}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--error" role="alert"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg><div><span class="us-alert__title">Corrija {{errCount}} campo(s) para continuar</span>As mensagens estão abaixo de cada campo.</div></div></sc-if>
+<div class="us-field"><label class="us-label" for="cn">Nome completo</label><input class="us-input {{f.nome.cls}}" id="cn" type="text" autocomplete="name" value="{{f.nome.v}}" onChange="{{f.nome.on}}" aria-invalid="{{f.nome.inv}}" aria-describedby="cn-h" ><p class="us-help {{f.nome.hcls}}" id="cn-h">{{f.nome.help}}</p></div><div class="us-field"><label class="us-label" for="ce">E-mail</label><input class="us-input {{f.email.cls}}" id="ce" type="email" autocomplete="email" value="{{f.email.v}}" onChange="{{f.email.on}}" aria-invalid="{{f.email.inv}}" aria-describedby="ce-h" ><p class="us-help {{f.email.hcls}}" id="ce-h">{{f.email.help}}</p></div><div class="us-field"><label class="us-label" for="ct">Telefone (celular com DDD)</label><input class="us-input {{f.tel.cls}}" id="ct" type="tel" autocomplete="tel" value="{{f.tel.v}}" onChange="{{f.tel.on}}" aria-invalid="{{f.tel.inv}}" aria-describedby="ct-h" ><p class="us-help {{f.tel.hcls}}" id="ct-h">{{f.tel.help}}</p></div><div class="us-field"><label class="us-label" for="cs">Senha</label><input class="us-input {{f.senha.cls}}" id="cs" type="password" autocomplete="new-password" value="{{f.senha.v}}" onChange="{{f.senha.on}}" aria-invalid="{{f.senha.inv}}" aria-describedby="cs-h" ><p class="us-help {{f.senha.hcls}}" id="cs-h">{{f.senha.help}}</p></div><div class="us-field"><label class="us-label" for="cc">Confirmar senha</label><input class="us-input {{f.conf.cls}}" id="cc" type="password" autocomplete="new-password" value="{{f.conf.v}}" onChange="{{f.conf.on}}" aria-invalid="{{f.conf.inv}}" aria-describedby="cc-h" ><p class="us-help {{f.conf.hcls}}" id="cc-h">{{f.conf.help}}</p></div>
+<button class="us-btn us-btn--primary us-btn--block" type="submit">Criar conta</button>
+<p class="small" style="margin:0">Já tem conta? <a class="us-link" href="Login.dc.html">Entrar</a></p></form></sc-if>
+</div></div></main><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Compra segura</strong><span class="small">Dados protegidos e senha armazenada com criptografia.</span></div>
+</div></footer>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1250}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+mkFields(defs){ const s = this.state; const out = {};
+ Object.keys(defs).forEach(k => { const err = (s.errs||{})[k] || ''; const ok = (s.oks||{})[k];
+  out[k] = { v: (s.vals||{})[k] ?? defs[k].v ?? '', cls: err ? 'is-error' : (ok ? 'is-success' : ''), inv: err ? 'true' : 'false', help: err || ok || defs[k].help || '', hcls: err ? 'us-help--error' : (ok ? 'us-help--success' : ''),
+   on: e => this.setState({vals: {...(this.state.vals||{}), [k]: e.target.value}, errs: {...(this.state.errs||{}), [k]: ''}, oks: {...(this.state.oks||{}), [k]: ''}}) }; });
+ return out; }
+val(k, d){ return ((this.state.vals||{})[k] ?? d ?? '').trim(); }
+
+renderVals(){ const s = this.state; const errs = s.errs || {}; const n = Object.values(errs).filter(Boolean).length;
+ return { hasToast: !!s.toast, toast: s.toast, cart: s.cart, acct: 'Entrar', done: !!s.done, notDone: !s.done, hasErrs: n > 0, errCount: n, firstName: this.val('nome').split(' ')[0],
+  f: this.mkFields({nome:{help:''}, email:{help:'Usaremos para confirmações de pedido.'}, tel:{help:'Também serve para entrar na sua conta.'}, senha:{help:'Mínimo de 6 caracteres.'}, conf:{help:''}}),
+  submit: e => { e.preventDefault(); const er = {}, ok = {}; const nome = this.val('nome'), em = this.val('email'), tel = this.val('tel').replace(/\D/g,''), sn = (this.state.vals||{}).senha || '', cf = (this.state.vals||{}).conf || '';
+   if (nome.length < 3) er.nome = 'Informe seu nome completo.';
+   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) er.email = 'Digite um e-mail válido, como nome@exemplo.com.';
+   if (tel.length < 10 || tel.length > 11) er.tel = 'Digite o celular com DDD, só números ou no formato (62) 99999-9999.';
+   if (sn.length < 6) er.senha = 'A senha precisa ter pelo menos 6 caracteres.';
+   if (!cf) er.conf = 'Confirme sua senha.'; else if (cf !== sn) er.conf = 'As senhas não coincidem.'; else if (sn.length >= 6) ok.conf = 'As senhas coincidem.';
+   if (em.toLowerCase() === 'cliente@utilistore.com') er.email = 'E-mail ou telefone já cadastrado. Entre ou recupere sua senha.';
+   this.setState({errs: er, oks: ok, done: Object.keys(er).length === 0}); }
+ }; }
+}
+</script>
+</body>
+</html>

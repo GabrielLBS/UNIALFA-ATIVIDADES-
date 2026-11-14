@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore — Meus pedidos</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:1000px">
+<header class="us-header"><div class="us-header__bar" style="flex-wrap:wrap;max-width:1200px;margin:0 auto;box-sizing:border-box">
+<a class="us-header__logo" href="Main.dc.html" aria-label="UtiliStore, página inicial">Utili<span>Store</span></a>
+<form class="us-search" role="search" style="flex:1 1 360px"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><label class="us-sr-only" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Buscar produtos, marcas e categorias"><a href="Catalogo.dc.html" style="min-height:40px;margin:2px;padding:0 16px;border-radius:8px;background:#112058;color:#fff;font:600 14px/40px Inter,sans-serif;text-decoration:none">Buscar</a></form>
+<div class="us-header__actions"><a class="us-header__action" href="Login.dc.html"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span>{{acct}}</span></a><a class="us-header__action" href="Carrinho.dc.html" aria-label="Carrinho, {{cart}} itens"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle></svg><span class="us-badge us-badge--count" aria-hidden="true">{{cart}}</span></a></div></div>
+<nav class="us-header__cats" aria-label="Categorias" style="max-width:1200px;margin:0 auto;box-sizing:border-box"><a href="Catalogo.dc.html" >Cozinha</a><a href="Catalogo.dc.html" >Limpeza</a><a href="Catalogo.dc.html" >Organização</a><a href="Catalogo.dc.html" >Banheiro</a><a href="Catalogo.dc.html" >Ferramentas</a><a href="Catalogo.dc.html" >Eletroportáteis</a><a href="Catalogo.dc.html">Ofertas</a></nav></header><main class="wrap">
+<nav class="us-breadcrumb" aria-label="Você está em"><ol><li><a href="Main.dc.html">Início</a></li><li><a href="Conta.dc.html">Minha conta</a></li><li><span aria-current="page">Meus pedidos</span></li></ol></nav>
+<div class="us-row"><h1 class="h1">Meus pedidos</h1><span class="us-badge us-badge--demo">Demonstração</span></div>
+<div class="us-row" role="group" aria-label="Filtrar por status" style="gap:8px"><sc-for list="{{chips}}" as="c" hint-placeholder-count="6"><button class="chip" type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}">{{c.name}}</button></sc-for></div>
+<div class="us-table-wrap" style="overflow-x:auto"><div role="table" aria-label="Meus pedidos" style="min-width:720px"><div role="rowgroup"><div role="row" style="display:grid;grid-template-columns:1.1fr 1fr .6fr 1fr 1.3fr 1.4fr;gap:12px;align-items:center;padding:12px 16px;background:#eef0f7"><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178">Pedido</div><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178">Data</div><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178">Itens</div><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178;text-align:right">Valor</div><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178">Status</div><div role="columnheader" style="font-size:13px;font-weight:700;color:#5b6178"></div></div></div><div role="rowgroup"><sc-for list="{{rows}}" as="o" hint-placeholder-count="5"><div role="row" style="display:grid;grid-template-columns:1.1fr 1fr .6fr 1fr 1.3fr 1.4fr;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid #dfe2ee"><div role="cell" style="font-size:14px;min-width:0"><strong>{{o.id}}</strong></div><div role="cell" style="font-size:14px;min-width:0">{{o.data}}</div><div role="cell" style="font-size:14px;min-width:0">{{o.itens}}</div><div role="cell" style="font-size:14px;min-width:0;text-align:right">{{o.valorTxt}}</div><div role="cell" style="font-size:14px;min-width:0"><span class="us-badge us-badge--{{o.st}}">{{o.stName}}</span></div><div role="cell" style="font-size:14px;min-width:0"><a class="us-btn us-btn--secondary us-btn--sm" href="PedidoDetalhe.dc.html">Ver detalhes<span class="us-sr-only"> do pedido {{o.id}}</span></a></div></div></sc-for></div></div></div>
+<sc-if value="{{none}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--info" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div>Nenhum pedido com esse status.</div></div></sc-if></main><footer class="footer"><div class="wrap" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px"><strong style="font-size:20px">Utili<span style="color:#F97316">Store</span></strong><span class="small">Utilidades para a casa, com confiança e sem complicação.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Institucional</strong><a class="small" href="Main.dc.html">Sobre a UtiliStore</a><a class="small" href="Main.dc.html">Política de privacidade</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Atendimento</strong><a class="small" href="MeusPedidos.dc.html">Meus pedidos</a><a class="small" href="Main.dc.html">Trocas e devoluções</a></div>
+<div style="display:flex;flex-direction:column;gap:8px"><strong>Compra segura</strong><span class="small">Dados protegidos e senha armazenada com criptografia.</span></div>
+</div></footer>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+renderVals(){ const s = this.state; const O = [{"id": "#UT-10482", "data": "28/09/2026", "valor": 189.9, "st": "enviado", "itens": 2}, {"id": "#UT-10455", "data": "24/09/2026", "valor": 129.0, "st": "preparacao", "itens": 1}, {"id": "#UT-10431", "data": "20/09/2026", "valor": 89.9, "st": "pago", "itens": 1}, {"id": "#UT-10397", "data": "12/09/2026", "valor": 64.5, "st": "entregue", "itens": 3}, {"id": "#UT-10360", "data": "05/09/2026", "valor": 99.0, "st": "cancelado", "itens": 1}]; const ST = {pago:'Pago',preparacao:'Em preparação',enviado:'Enviado',entregue:'Entregue',cancelado:'Cancelado'}; const f = s.f || 'todos';
+ const rows = O.filter(o => f === 'todos' || o.st === f).map(o => ({...o, stName: ST[o.st], valorTxt: this.brl(o.valor)}));
+ return { hasToast: !!s.toast, toast: s.toast, cart: 2, acct: 'Olá, Cliente', rows, none: rows.length === 0,
+  chips: [['todos','Todos']].concat(Object.entries(ST)).map(([k,n]) => ({name: n, on: k === f ? 'true' : 'false', pick: () => this.setState({f: k})})) }; }
+}
+</script>
+</body>
+</html>

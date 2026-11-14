@@ -1,0 +1,67 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-14T22:20:00Z"
+ },
+ "title": "UtiliStore — Entrega 08: Protótipo de alta fidelidade",
+ "launch": {
+  "view": "canvas",
+  "page": "loja"
+ },
+ "pages": [
+  {
+   "id": "loja",
+   "name": "Loja"
+  },
+  {
+   "id": "admin",
+   "name": "Painel administrativo"
+  }
+ ],
+ "boards": {},
+ "order": [],
+ "notes": {
+  "t-loja": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 08 · Protótipo da loja",
+   "kind": "title1",
+   "maxW": 5960,
+   "page": "loja"
+  },
+  "t-admin": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 08 · Protótipo do painel administrativo",
+   "kind": "title1",
+   "maxW": 5960,
+   "page": "admin"
+  },
+  "n-loja": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "loja",
+   "fill": "blue",
+   "text": "Como usar o protótipo\n\nAbra qualquer tela em Play. Links do cabeçalho, menus e botões levam às outras telas.\n\nFluxo de compra: Página inicial → Produto → Carrinho → Checkout (4 etapas) → Pedido confirmado → Detalhes do pedido.\n\nLogin de teste (o mesmo usuário do repositório): cliente@utilistore.com ou 62999999999, senha 123456. Erre a senha para ver o erro da API.\n\nCada tela guarda o próprio estado: o contador do carrinho de uma tela não passa para a outra.\n\nEtiqueta laranja DEMONSTRAÇÃO = dado sem backend. Etiqueta azul = dado de rota real da API."
+  },
+  "n-admin": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "admin",
+   "fill": "blue",
+   "text": "Painel administrativo (todo em demonstração)\n\nLogin: qualquer e-mail válido e senha com 6+ caracteres.\n\nProdutos: busque, filtre, cadastre (valida campos), edite, exclua (com confirmação) e veja o aviso ao descartar alterações.\n\nPedidos: filtre por status, abra um pedido e avance o status com confirmação — o histórico registra a mudança.\n\nClientes: busque e abra a ficha."
+  }
+ },
+ "designSystems": [
+  {
+   "title": "UtiliStore",
+   "namespace": "utilistore",
+   "artifact": "https://claude.ai/artifact/7VHY5bS4hfBMXJDW5oWXjy",
+   "version": null,
+   "copiedAt": "2026-11-14T22:20:00Z"
+  }
+ ]
+}

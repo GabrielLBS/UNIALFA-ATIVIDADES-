@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>UtiliStore Painel — Login</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/aff8d4f17c7ec373b38e663d68bf8101">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}a{color:#1c3080}a:hover{color:#112058}</style>
+</helmet>
+<div class="pg us-root" style="min-height:820px">
+<div style="min-height:820px;display:flex;align-items:center;justify-content:center;padding:32px;box-sizing:border-box;background:#112058">
+<section class="us-card" style="width:min(440px,100%);box-sizing:border-box;padding:32px;display:flex;flex-direction:column;gap:16px" aria-labelledby="al">
+<div style="font-size:22px;font-weight:800;color:#112058">Utili<span style="color:#C2410C">Store</span> <span class="small muted" style="font-weight:600">· Painel</span></div>
+<h1 class="h2" id="al">Acesso administrativo</h1><div class="us-alert us-alert--warning" role="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><div>Demonstração: o sistema ainda não tem perfil de administrador. Qualquer e-mail e senha de 6+ caracteres entram.</div></div>
+<sc-if value="{{ok}}" hint-placeholder-val="{{false}}"><div class="us-alert us-alert--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><div><span class="us-alert__title">Acesso liberado</span><a class="us-link" href="AdminDashboard.dc.html">Abrir o dashboard</a></div></div></sc-if>
+<div class="us-field"><label class="us-label" for="ae">E-mail</label><input class="us-input {{f.email.cls}}" id="ae" type="email" autocomplete="username" value="{{f.email.v}}" onChange="{{f.email.on}}" aria-invalid="{{f.email.inv}}" aria-describedby="ae-h" ><p class="us-help {{f.email.hcls}}" id="ae-h">{{f.email.help}}</p></div><div class="us-field"><label class="us-label" for="as">Senha</label><input class="us-input {{f.senha.cls}}" id="as" type="password" autocomplete="current-password" value="{{f.senha.v}}" onChange="{{f.senha.on}}" aria-invalid="{{f.senha.inv}}" aria-describedby="as-h" ><p class="us-help {{f.senha.hcls}}" id="as-h">{{f.senha.help}}</p></div>
+<button class="us-btn us-btn--primary us-btn--block" type="button" onClick="{{go}}">Entrar no painel</button><a class="us-link small" href="Main.dc.html">Ir para a loja</a></section></div>
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}"><div class="toast-host"><div class="us-toast us-toast--success" role="status"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{toast}}</span></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = Object.assign({toast:'', cart: 2}, {}); }
+
+brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+toastNow(msg, kind){ clearTimeout(this._t); this.setState({toast: msg, toastKind: kind || 'success'}); this._t = setTimeout(() => this.setState({toast: ''}), 3200); }
+componentWillUnmount(){ clearTimeout(this._t); }
+
+
+mkFields(defs){ const s = this.state; const out = {};
+ Object.keys(defs).forEach(k => { const err = (s.errs||{})[k] || ''; const ok = (s.oks||{})[k];
+  out[k] = { v: (s.vals||{})[k] ?? defs[k].v ?? '', cls: err ? 'is-error' : (ok ? 'is-success' : ''), inv: err ? 'true' : 'false', help: err || ok || defs[k].help || '', hcls: err ? 'us-help--error' : (ok ? 'us-help--success' : ''),
+   on: e => this.setState({vals: {...(this.state.vals||{}), [k]: e.target.value}, errs: {...(this.state.errs||{}), [k]: ''}, oks: {...(this.state.oks||{}), [k]: ''}}) }; });
+ return out; }
+val(k, d){ return ((this.state.vals||{})[k] ?? d ?? '').trim(); }
+
+renderVals(){ const s = this.state; return { hasToast: false, toast: '', ok: !!s.ok, f: this.mkFields({email:{}, senha:{}}),
+ go: () => { const er = {}; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.val('email'))) er.email = 'Digite um e-mail válido.'; if (((this.state.vals||{}).senha||'').length < 6) er.senha = 'A senha precisa ter pelo menos 6 caracteres.'; this.setState({errs: er, ok: !Object.keys(er).length}); } }; }
+}
+</script>
+</body>
+</html>
