@@ -1,0 +1,23 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": { "v": 1, "at": "2026-11-14T21:45:00Z" },
+  "title": "UtiliStore",
+  "namespace": "UtiliStore",
+  "libraries": [],
+  "sections": {},
+  "groups": ["Logos"],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": ["logo-utilistore.png"],
+      "files": {
+        "logo-utilistore.png": { "name": "logo-utilistore.png", "blob": "34d6a08f1a2e9549ecdc82bd1edcb4b5", "size": 1220260, "type": "image/png" }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": { "sections": [] },
+  "lastChange": { "by": "Gabriel Luis Barbosa Souza", "at": "2026-11-14T21:45:00Z", "via": "Claude (chat)", "note": "Entrega 06: tokens, 16 componentes com estados, README e capa" }
+}

@@ -14,8 +14,8 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 | 03 | Jornada do usuário | mesmo arquivo | ✅ Concluída |
 | 04 | Arquitetura da informação | mesmo arquivo | ✅ Concluída |
 | 05 | Fluxos de navegação | mesmo arquivo | ✅ Concluída |
-| 06 | Identidade visual e Design System | — | ⏳ Em andamento |
-| 07 | Wireframes | — | Pendente |
+| 06 | Identidade visual e Design System | [design-system/](design-system/) (tokens, 16 componentes, README) | ✅ Concluída |
+| 07 | Wireframes | — | ⏳ Próxima |
 | 08 | Protótipos de alta fidelidade | — | Pendente |
 | 09 | Interfaces responsivas | — | Pendente |
 | 10 | Análise de acessibilidade | — | Pendente |
@@ -33,3 +33,4 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 - Entrega 01: https://claude.ai/artifact/UZ3M4LjfXEUgdNcGiJor5g
 - Entregas 02 a 05: https://claude.ai/artifact/F88Hu6jRo57qQD3somStP5
 - Diagnóstico técnico: https://claude.ai/artifact/3CkFL3r24bEGGdGhAxEd1i
+- Design System (Entrega 06): https://claude.ai/artifact/7VHY5bS4hfBMXJDW5oWXjy
