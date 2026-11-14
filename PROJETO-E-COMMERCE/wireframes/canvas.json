@@ -1,0 +1,395 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-14T22:05:00Z"
+ },
+ "title": "UtiliStore — Entrega 07: Wireframes",
+ "launch": {
+  "view": "canvas",
+  "page": "loja"
+ },
+ "pages": [
+  {
+   "id": "loja",
+   "name": "Loja · desktop"
+  },
+  {
+   "id": "mobile",
+   "name": "Mobile (375px)"
+  },
+  {
+   "id": "admin",
+   "name": "Painel administrativo"
+  }
+ ],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 2050,
+   "title": "01 · Página inicial",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Login.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1100,
+   "title": "02 · Login",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Cadastro.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 1250,
+   "title": "03 · Cadastro",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "RecuperarSenha.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 900,
+   "title": "04 · Recuperar senha (modal sobre o login)",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Catalogo.dc.html": {
+   "x": 0,
+   "y": 2230,
+   "w": 1440,
+   "h": 1900,
+   "title": "05 · Catálogo (categoria)",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Categorias.dc.html": {
+   "x": 1520,
+   "y": 2230,
+   "w": 1440,
+   "h": 1150,
+   "title": "06 · Categorias",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Pesquisa.dc.html": {
+   "x": 3040,
+   "y": 2230,
+   "w": 1440,
+   "h": 1600,
+   "title": "07 · Resultados da pesquisa (com resultados e sem resultados)",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Produto.dc.html": {
+   "x": 4560,
+   "y": 2230,
+   "w": 1440,
+   "h": 1950,
+   "title": "08 · Detalhes do produto",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Carrinho.dc.html": {
+   "x": 0,
+   "y": 4360,
+   "w": 1440,
+   "h": 1350,
+   "title": "09 · Carrinho",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "Checkout.dc.html": {
+   "x": 1520,
+   "y": 4360,
+   "w": 1440,
+   "h": 1200,
+   "title": "10 · Checkout (etapa 2: Entrega)",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "CheckoutConfirmado.dc.html": {
+   "x": 3040,
+   "y": 4360,
+   "w": 1440,
+   "h": 820,
+   "title": "11 · Pedido confirmado",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "ContaDados.dc.html": {
+   "x": 4560,
+   "y": 4360,
+   "w": 1440,
+   "h": 1100,
+   "title": "12 · Minha conta: Dados pessoais",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "ContaSeguranca.dc.html": {
+   "x": 0,
+   "y": 5890,
+   "w": 1440,
+   "h": 1250,
+   "title": "13 · Minha conta: Segurança",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "ContaEnderecos.dc.html": {
+   "x": 1520,
+   "y": 5890,
+   "w": 1440,
+   "h": 1400,
+   "title": "14 · Minha conta: Endereços",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "MeusPedidos.dc.html": {
+   "x": 3040,
+   "y": 5890,
+   "w": 1440,
+   "h": 1050,
+   "title": "15 · Meus pedidos",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "PedidoDetalhe.dc.html": {
+   "x": 4560,
+   "y": 5890,
+   "w": 1440,
+   "h": 1300,
+   "title": "16 · Detalhes do pedido (cliente)",
+   "page": "loja",
+   "expand": "fill"
+  },
+  "AdminLogin.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 820,
+   "title": "17 · Login administrativo",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminDashboard.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1300,
+   "title": "18 · Dashboard",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminProdutos.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 1050,
+   "title": "19 · Produtos",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminProdutoForm.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 1250,
+   "title": "20 · Cadastrar / editar produto",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminCategorias.dc.html": {
+   "x": 0,
+   "y": 1480,
+   "w": 1440,
+   "h": 820,
+   "title": "21 · Categorias",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminPedidos.dc.html": {
+   "x": 1520,
+   "y": 1480,
+   "w": 1440,
+   "h": 1000,
+   "title": "22 · Pedidos",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminPedidoDetalhe.dc.html": {
+   "x": 3040,
+   "y": 1480,
+   "w": 1440,
+   "h": 1100,
+   "title": "23 · Detalhes do pedido (admin)",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminClientes.dc.html": {
+   "x": 4560,
+   "y": 1480,
+   "w": 1440,
+   "h": 900,
+   "title": "24 · Clientes",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminClienteFicha.dc.html": {
+   "x": 0,
+   "y": 2760,
+   "w": 1440,
+   "h": 950,
+   "title": "25 · Ficha do cliente",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "AdminConfig.dc.html": {
+   "x": 1520,
+   "y": 2760,
+   "w": 1440,
+   "h": 900,
+   "title": "26 · Configurações",
+   "page": "admin",
+   "expand": "fill"
+  },
+  "M-Home.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M1 · Página inicial (mobile)",
+   "page": "mobile"
+  },
+  "M-Login.dc.html": {
+   "x": 455,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M2 · Login (mobile)",
+   "page": "mobile"
+  },
+  "M-Produto.dc.html": {
+   "x": 910,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M3 · Produto (mobile)",
+   "page": "mobile"
+  },
+  "M-Carrinho.dc.html": {
+   "x": 1365,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M4 · Carrinho (mobile)",
+   "page": "mobile"
+  },
+  "M-Checkout.dc.html": {
+   "x": 1820,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M5 · Checkout etapa 2 (mobile)",
+   "page": "mobile"
+  },
+  "M-AdminPedidos.dc.html": {
+   "x": 2275,
+   "y": 0,
+   "w": 375,
+   "h": 844,
+   "title": "M6 · Painel: Pedidos (mobile)",
+   "page": "mobile"
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Login.dc.html",
+  "Cadastro.dc.html",
+  "RecuperarSenha.dc.html",
+  "Catalogo.dc.html",
+  "Categorias.dc.html",
+  "Pesquisa.dc.html",
+  "Produto.dc.html",
+  "Carrinho.dc.html",
+  "Checkout.dc.html",
+  "CheckoutConfirmado.dc.html",
+  "ContaDados.dc.html",
+  "ContaSeguranca.dc.html",
+  "ContaEnderecos.dc.html",
+  "MeusPedidos.dc.html",
+  "PedidoDetalhe.dc.html",
+  "AdminLogin.dc.html",
+  "AdminDashboard.dc.html",
+  "AdminProdutos.dc.html",
+  "AdminProdutoForm.dc.html",
+  "AdminCategorias.dc.html",
+  "AdminPedidos.dc.html",
+  "AdminPedidoDetalhe.dc.html",
+  "AdminClientes.dc.html",
+  "AdminClienteFicha.dc.html",
+  "AdminConfig.dc.html",
+  "M-Home.dc.html",
+  "M-Login.dc.html",
+  "M-Produto.dc.html",
+  "M-Carrinho.dc.html",
+  "M-Checkout.dc.html",
+  "M-AdminPedidos.dc.html"
+ ],
+ "notes": {
+  "t-loja": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 07 · Wireframes da loja (cliente) · 1440px",
+   "kind": "title1",
+   "maxW": 6000,
+   "page": "loja"
+  },
+  "t-admin": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 07 · Wireframes do painel administrativo · 1440px",
+   "kind": "title1",
+   "maxW": 6000,
+   "page": "admin"
+  },
+  "t-mobile": {
+   "x": 0,
+   "y": -300,
+   "text": "Entrega 07 · Wireframes mobile · 375px",
+   "kind": "title1",
+   "maxW": 2650,
+   "page": "mobile"
+  },
+  "leg-loja": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "loja",
+   "fill": "orange",
+   "text": "Como ler estes wireframes\n\n• Cinza = estrutura, sem cor nem estilo final (isso vem na Entrega 08).\n• Selo tracejado DEMONSTRAÇÃO = dado sem backend.\n• Selo preto DADOS REAIS DA API = dado que vem de rota existente; “PENDENTE” = rota escrita, aguardando correção do backend.\n• Botão com contorno tracejado = ação de compra (será laranja).\n• Círculos numerados = pontos explicados nas justificativas (Entrega 12).\n• Caixas tracejadas = estados alternativos (erro, sucesso, vazio).\n• Em Play, os links do header, do menu e dos botões navegam entre as telas."
+  },
+  "leg-admin": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "admin",
+   "fill": "orange",
+   "text": "Painel administrativo\n\nTodo o painel é demonstração: não existe perfil de administrador, tabela de produtos ou de pedidos no repositório.\n\nOs campos de cliente (nome, e-mail, telefone, cliente desde, endereços) são os da tabela real clientes/enderecos.\n\nMenu lateral fixo; em telas estreitas ele empilha acima do conteúdo (no mobile vira gaveta — ver página Mobile)."
+  },
+  "leg-mobile": {
+   "x": -760,
+   "y": 0,
+   "w": 640,
+   "page": "mobile",
+   "fill": "orange",
+   "text": "Mobile não é o desktop encolhido\n\n• Pesquisa ganha linha própria no header.\n• Na página do produto e no carrinho, a ação de compra fica fixa no rodapé, ao alcance do polegar.\n• Checkout mostra uma etapa por vez com barra de progresso.\n• Tabelas do painel viram cartões."
+  }
+ },
+ "designSystems": []
+}
