@@ -19,7 +19,7 @@ Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-inte
 | 08 | Protótipos de alta fidelidade | [prototipo/](prototipo/) (19 telas interativas) | ✅ Concluída |
 | 09 | Interfaces responsivas | [prototipo/RESPONSIVO.md](prototipo/RESPONSIVO.md) (12 telas em 768 e 375px) | ✅ Concluída |
 | 10 | Análise de acessibilidade | [docs/10-analise-de-acessibilidade.md](docs/10-analise-de-acessibilidade.md) (WCAG 2.2 AA, 7 correções aplicadas) | ✅ Concluída |
-| 11 | Avaliação de usabilidade | [docs/11-avaliacao-de-usabilidade.md](docs/11-avaliacao-de-usabilidade.md) (Nielsen, 18 problemas + roteiro de teste) | ✅ Concluída |
+| 11 | Avaliação de usabilidade | [docs/11-avaliacao-de-usabilidade.md](docs/11-avaliacao-de-usabilidade.md) (Nielsen, 18 problemas, percurso cognitivo simulado com 5 participantes fictícios e roteiro de teste) | ✅ Concluída |
 | 12 | Documentação das decisões de design | [docs/12-decisoes-de-design.md](docs/12-decisoes-de-design.md) (10 perguntas × 20 telas) | ✅ Concluída |
 
 ## Decisões do projeto

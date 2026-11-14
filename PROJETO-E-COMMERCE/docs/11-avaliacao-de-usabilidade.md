@@ -165,3 +165,44 @@ Os três problemas de gravidade 3: o carrinho não é compartilhado entre as tel
 | 1 — Carrinho entre telas | 3 (mantido) | Limitação do formato do protótipo; resolvida na implementação. No teste com usuários, avisar o participante antes |
 
 Gravidade 3 restante: **1** (carrinho entre telas).
+
+## Percurso cognitivo simulado com 5 participantes fictícios
+
+> **Atenção: isto é uma simulação feita pelo avaliador, não um teste com pessoas reais.** Os participantes abaixo são fictícios, e os resultados são **previsões** baseadas nas heurísticas e nos 18 problemas desta avaliação. Por isso não há taxas de sucesso, tempos nem nota SUS: esses números só existem se o teste for aplicado. O método usado é o **percurso cognitivo** (cognitive walkthrough), em que o avaliador percorre cada tarefa no lugar de um perfil de usuário e se pergunta, a cada passo: a pessoa sabe o que fazer? Ela vê o controle certo? Entende a resposta do sistema?
+
+### Participantes fictícios
+
+| ID | Participante | Perfil | Aparelho | Persona de referência |
+|---|---|---|---|---|
+| P1 | Camila, 29 anos | Vendedora; compra em marketplaces toda semana | Celular | Mariana |
+| P2 | Renata, 41 anos | Professora; compra on-line algumas vezes por mês | Celular | Mariana |
+| P3 | Lucas, 23 anos | Estudante de ADS; muito familiarizado com tecnologia | Notebook | — (usuário experiente) |
+| P4 | Antônio, 67 anos | Aposentado; usa tablet com fonte ampliada; pouca experiência com compras on-line | Tablet | José |
+| P5 | Juliana, 33 anos | Gerente de uma loja de utilidades; usa sistemas de gestão diariamente | Desktop | Rafael |
+
+### Previsão por tarefa
+
+Legenda: ✅ deve concluir sem ajuda · ⚠️ deve concluir com hesitação · ❌ risco de não concluir sem ajuda. O número entre parênteses é o problema da avaliação heurística que explica a previsão.
+
+| Tarefa | P1 Camila | P2 Renata | P3 Lucas | P4 Antônio | P5 Juliana |
+|---|---|---|---|---|---|
+| 1. Encontrar o pote de vidro e pôr 2 no carrinho | ✅ | ✅ | ✅ | ⚠️ procura pelas categorias e não pela busca; o card compacto no tablet tem texto menor | — |
+| 2. Entrar na conta | ✅ tenta o telefone, e funciona | ✅ | ✅ | ⚠️ não sabe se pode usar o telefone até ler o texto de ajuda do campo | — |
+| 3. Finalizar a compra com endereço novo | ⚠️ estranha o total mudar quando o frete aparece (2) | ⚠️ não entende "Apelido" do endereço (3); digita o endereço inteiro sem preenchimento pelo CEP (11) | ✅ | ❌ formulário de endereço longo, "Apelido" confuso (3) e erros que só aparecem ao enviar (10) | — |
+| 4. Descobrir se o pedido já saiu | ✅ | ✅ | ✅ | ✅ linha do tempo clara | — |
+| 5. Marcar o pedido do José como enviado | — | — | — | — | ✅ pela busca do topo ou pelo filtro; sente falta de marcar vários pedidos de uma vez (14) |
+| 6. Cadastrar um produto novo | — | — | — | — | ⚠️ digita o preço com ponto ("39.90") e só descobre o formato ao salvar (12) |
+
+**Observação válida para todos:** o carrinho de uma tela não passa para outra (1). Em todas as sessões o facilitador precisa avisar isso antes, ou a tarefa 3 começa com itens diferentes dos escolhidos na tarefa 1.
+
+### O que a simulação indica
+
+1. **O formulário de endereço é o ponto de maior risco**, sobretudo para quem tem pouca experiência (P4). Três problemas se somam ali: "Apelido" (3), falta de busca por CEP (11) e validação só no envio (10). Ele passa a ser a prioridade número 1 entre as melhorias ainda não feitas.
+2. **O login por telefone tende a funcionar bem**, mas só se a pessoa ler o texto de ajuda. Vale testar na prática se "E-mail ou telefone" no rótulo basta.
+3. **O painel atende o administrador**; as perdas são de eficiência (ações em lote, máscara de preço), não de conclusão da tarefa.
+4. **Usuários experientes (P3) não devem ter problemas.** As dificuldades previstas se concentram em pouca familiaridade com tecnologia e no celular, o que reforça as personas José e Mariana como prioridade.
+
+### Como usar isto na apresentação
+
+- Apresentar como **"percurso cognitivo simulado"**, deixando claro que os participantes são fictícios.
+- Se der tempo de testar com 2 ou 3 colegas, comparar o que eles fizeram com as previsões desta tabela. Mostrar onde a previsão acertou e onde errou é um argumento forte.
