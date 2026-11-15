@@ -4,6 +4,10 @@ Projeto de UX/UI Design e análise técnica do **UtiliStore**, sistema de varejo
 
 Repositório analisado: [NelmarBarrosMalko/utilistore — branch `api-login-integrada`](https://github.com/NelmarBarrosMalko/utilistore/tree/api-login-integrada)
 
+## Documento único
+
+[UtiliStore-UX-UI.docx](UtiliStore-UX-UI.docx): todas as entregas reunidas em um arquivo Word, com sumário, diagramas, wireframes, protótipos e telas responsivas (139 páginas).
+
 ## Entregas
 
 | # | Entrega | Arquivo | Situação |
